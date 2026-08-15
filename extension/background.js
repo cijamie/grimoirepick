@@ -4,8 +4,8 @@ const DEFAULT_REGISTRY_URL = 'https://raw.githubusercontent.com/cijamie/grimoire
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'FETCH_REGISTRY') {
-    const url = message.url || DEFAULT_REGISTRY_URL;
-    fetch(url)
+    const url = (message.url || DEFAULT_REGISTRY_URL) + '?t=' + Date.now();
+    fetch(url, { cache: 'no-store' })
       .then(response => {
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         return response.json();
@@ -19,7 +19,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === 'FETCH_TEXT') {
-    fetch(message.url)
+    const url = message.url + '?t=' + Date.now();
+    fetch(url, { cache: 'no-store' })
       .then(response => {
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         return response.text();

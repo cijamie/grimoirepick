@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchRegistry() {
   try {
-    const response = await fetch('./manifest.json');
+    const response = await fetch('./manifest.json?t=' + Date.now(), { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     registry = await response.json();
     
@@ -144,7 +144,7 @@ async function copyScriptJson(theme, silent = false) {
   if (!silent) showToast('Fetching script JSON...');
   
   try {
-    const response = await fetch(theme.scriptJsonUrl);
+    const response = await fetch(theme.scriptJsonUrl + '?t=' + Date.now(), { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const text = await response.text();
     

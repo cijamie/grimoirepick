@@ -105,7 +105,7 @@
   // --- Userscript Background proxy using GM_xmlhttpRequest ---
   function sendMessageToBackground(message) {
     if (message.type === 'FETCH_REGISTRY') {
-      const url = message.url || 'https://raw.githubusercontent.com/cijamie/grimoirepick/main/manifest.json';
+      const url = (message.url || 'https://raw.githubusercontent.com/cijamie/grimoirepick/main/manifest.json') + '?t=' + Date.now();
       return new Promise((resolve) => {
         GM_xmlhttpRequest({
           method: 'GET',
@@ -130,10 +130,11 @@
     }
 
     if (message.type === 'FETCH_TEXT') {
+      const url = message.url + '?t=' + Date.now();
       return new Promise((resolve) => {
         GM_xmlhttpRequest({
           method: 'GET',
-          url: message.url,
+          url: url,
           onload: function(response) {
             if (response.status === 200) {
               resolve({ success: true, data: response.responseText });
