@@ -3,7 +3,7 @@
     {
       "id": "zeroday",
       "name": "Zero Day",
-      "author": "jme",
+      "author": "cijamie",
       "scriptName": "Operation: Zero Day by jme v1",
       "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/zeroday.json",
       "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/zeroday.css"
