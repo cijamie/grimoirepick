@@ -1,0 +1,484 @@
+/* =========================================================
+   MI6 CLASSIFIED DOSSIER - COMPLETE APPLICATION STYLES
+   ========================================================= */
+
+/* Imports sleek spy-tech typography */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Teko:wght@500;700&display=swap');
+
+:root {
+  /* Core Palette */
+  --mi6-black: #07090e;
+  --mi6-slate: #0d121d;
+  --mi6-slate-trans: rgba(13, 18, 29, 0.88);
+  --mi6-gold: #d4af37;
+  --mi6-gold-dim: rgba(212, 175, 55, 0.25);
+  --mi6-cyan: #00e5ff;
+  --mi6-cyan-glow: rgba(0, 229, 255, 0.35);
+  --mi6-red: #ff3333;
+  --mi6-purple: #b388ff;
+  --mi6-text-bright: #ffffff;
+  --mi6-text-dim: #cfd8dc;
+  --mi6-text-muted: #90a4ae;
+  
+  /* Background Assets */
+  --mi6-menu-bg: url("https://github.com/cijamie/BOTCShortFuse/blob/main/mi6.webp?raw=true");
+  --mi6-sheet-bg: url("https://github.com/cijamie/BOTCShortFuse/blob/main/sheetbackground.jpg?raw=true");
+}
+
+/* =========================================================
+   GLOBAL BASE & SCROLLBARS
+   ========================================================= */
+
+html, body, #main, #app {
+  background-image: 
+    linear-gradient(rgba(7, 9, 14, 0.78), rgba(7, 9, 14, 0.78)), 
+    var(--mi6-menu-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  color: var(--mi6-text-bright) !important;
+  font-family: 'Share Tech Mono', monospace, sans-serif !important;
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mi6-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mi6-slate);
+  border: 1px solid var(--mi6-gold-dim);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mi6-cyan);
+  box-shadow: 0 0 6px var(--mi6-cyan);
+}
+
+/* =========================================================
+   SIDE DRAWER TABS (CHARACTERS, FIRST NIGHT, OTHER NIGHTS)
+   ========================================================= */
+
+aside.tab div.label,
+#left aside.tab div.label,
+#right aside.tab div.label,
+.tab .label {
+  background-image: 
+    linear-gradient(rgba(13, 18, 29, 0.85), rgba(13, 18, 29, 0.85)), 
+    var(--mi6-menu-bg) !important;
+  background-size: cover !important;
+  border: 1px solid var(--mi6-gold) !important;
+  color: var(--mi6-gold) !important;
+  font-family: 'Teko', sans-serif !important;
+  font-size: 1.25rem !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  transition: all 0.2s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+aside.tab div.label:hover,
+#left aside.tab div.label:hover,
+#right aside.tab div.label:hover,
+.tab .label:hover {
+  color: var(--mi6-cyan) !important;
+  border-color: var(--mi6-cyan) !important;
+  box-shadow: 0 0 10px var(--mi6-cyan-glow) !important;
+}
+
+/* =========================================================
+   TOOLTIPS & FLOATING INTEL
+   ========================================================= */
+
+.token .ability,
+div.roles .token .ability,
+.modal .token .ability,
+div[class*="popup"] .token .ability {
+  background-image: 
+    linear-gradient(var(--mi6-slate-trans), var(--mi6-slate-trans)), 
+    var(--mi6-menu-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  backdrop-filter: blur(6px) !important;
+  border: 1px solid var(--mi6-cyan) !important;
+  border-radius: 4px !important;
+  color: var(--mi6-text-bright) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 10px var(--mi6-cyan-glow) !important;
+}
+
+.token .ability:before {
+  background-image: 
+    linear-gradient(var(--mi6-slate-trans), var(--mi6-slate-trans)), 
+    var(--mi6-menu-bg) !important;
+  background-size: cover !important;
+  border-left: 1px solid var(--mi6-cyan) !important;
+  border-bottom: 1px solid var(--mi6-cyan) !important;
+}
+
+.token .ability b,
+.token .ability i,
+.token .ability span,
+.token .ability .flavor {
+  color: var(--mi6-text-bright) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+}
+
+.token .ability .alt-name,
+.token .ability .flavor {
+  color: var(--mi6-text-muted) !important;
+  font-style: italic;
+}
+
+/* Tooltip Subtitle Team Replacements */
+.token .ability .team,
+.token .ability span.team,
+div.roles .token .ability .team {
+  font-size: 0 !important;
+}
+
+.team-townsfolk .token .ability .team::after,
+.townsfolk .token .ability .team::after,
+.token[data-team="townsfolk"] .ability .team::after {
+  content: "Agent" !important;
+  font-size: 1rem !important;
+  color: var(--mi6-cyan) !important;
+}
+
+.team-outsider .token .ability .team::after,
+.outsider .token .ability .team::after,
+.token[data-team="outsider"] .ability .team::after {
+  content: "Informant" !important;
+  font-size: 1rem !important;
+  color: #80deea !important;
+}
+
+.team-minion .token .ability .team::after,
+.minion .token .ability .team::after,
+.token[data-team="minion"] .ability .team::after {
+  content: "Rogue" !important;
+  font-size: 1rem !important;
+  color: #ff8a80 !important;
+}
+
+.team-demon .token .ability .team::after,
+.demon .token .ability .team::after,
+.token[data-team="demon"] .ability .team::after {
+  content: "Target" !important;
+  font-size: 1rem !important;
+  color: var(--mi6-red) !important;
+}
+
+/* =========================================================
+   MODALS, SYSTEM POPUPS & INPUTS
+   ========================================================= */
+
+.modal, 
+.dialog-window, 
+div[class*="popup"], 
+div[class*="modal"] {
+  background-image: 
+    linear-gradient(rgba(7, 9, 14, 0.9), rgba(7, 9, 14, 0.9)), 
+    var(--mi6-menu-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid var(--mi6-cyan) !important;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.95), 0 0 12px var(--mi6-cyan-glow) !important;
+  border-radius: 4px !important;
+  color: var(--mi6-text-bright) !important;
+}
+
+.modal *, .dialog-window *, div[class*="popup"] * {
+  color: var(--mi6-text-bright) !important;
+}
+
+input:not([type="button"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  background-color: rgba(7, 9, 14, 0.85) !important;
+  color: var(--mi6-text-bright) !important;
+  border: 1px solid var(--mi6-cyan) !important;
+  border-radius: 2px !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8) !important;
+  outline: none !important;
+  padding: 6px 8px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--mi6-gold) !important;
+  box-shadow: 0 0 8px var(--mi6-cyan-glow), inset 0 0 8px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* =========================================================
+   CHARACTER & NIGHT ORDER SHEETS (Dossier Slide-out)
+   ========================================================= */
+
+aside.character,
+aside.night-order,
+aside[class*="character"] div[role="tabpanel"],
+aside[class*="night-order"] div[role="tabpanel"],
+div.container[role="tabpanel"] {
+  background-image: 
+    linear-gradient(rgba(10, 14, 22, 0.92), rgba(10, 14, 22, 0.92)), 
+    var(--mi6-sheet-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-left: 2px solid var(--mi6-gold) !important;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.95) !important;
+}
+
+aside.night-order li,
+aside.night-order ul li {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--mi6-gold-dim) !important;
+  margin: 0 !important;
+  padding: 8px 0 !important;
+}
+
+aside.night-order .name,
+aside.night-order li .name,
+aside.night-order li.role-minioninfo .name,
+aside.night-order li.role-demoninfo .name {
+  color: var(--mi6-cyan) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-weight: bold !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.5px !important;
+}
+
+aside.night-order li.role-dusk .name,
+aside.night-order li.role-dawn .name {
+  color: var(--mi6-gold) !important;
+  text-transform: uppercase;
+}
+
+aside.night-order span.reminder,
+aside.night-order li span.reminder,
+aside.night-order .reminder,
+aside.night-order p {
+  color: var(--mi6-text-dim) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-weight: normal !important;
+  line-height: 1.35 !important;
+  border-left: 2px solid var(--mi6-gold) !important;
+  padding-left: 8px !important;
+  margin-top: 4px !important;
+}
+
+aside.character .role,
+aside.character li,
+aside.character ul li {
+  grid-template-columns: 35px 145px 1fr !important;
+  align-items: center !important;
+  padding: 4px 0 !important;
+}
+
+aside.character .name,
+aside.character li .name {
+  color: var(--mi6-text-bright) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-weight: bold !important;
+  font-size: 0.95rem !important;
+  line-height: 1.15 !important;
+  width: 140px !important;
+  min-width: 130px !important;
+  max-width: 150px !important;
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+aside.character .ability,
+aside.character li .ability {
+  color: var(--mi6-text-dim) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-weight: normal !important;
+  line-height: 1.3 !important;
+}
+
+/* =========================================================
+   VERTICAL TEAM SIDE HEADERS (SCOPED STRICTLY TO CHARACTER SHEET)
+   ========================================================= */
+
+aside.character section.team,
+aside.character ul.team,
+aside.character .team {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+aside.character .team aside,
+aside.night-order .team aside,
+aside.character .team-name,
+aside.character .group-title {
+  background-image: 
+    linear-gradient(rgba(13, 18, 29, 0.85), rgba(13, 18, 29, 0.85)), 
+    var(--mi6-sheet-bg) !important;
+  background-size: cover !important;
+  border: 1px solid var(--mi6-gold) !important;
+  border-radius: 2px !important;
+  padding: 10px 4px !important;
+  color: var(--mi6-gold) !important;
+  
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: stretch !important;
+  
+  /* Collapses original text */
+  font-size: 0 !important;
+  
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+aside.character .team aside::after,
+aside.night-order .team aside::after,
+aside.character .team-name::after {
+  font-family: 'Teko', sans-serif !important;
+  font-size: 1.35rem !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+  transform: none !important;
+  white-space: nowrap !important;
+}
+
+/* =========================================================
+   TEAM ACCENT COLOR & CUSTOM RE-THEMED LABELS
+   ========================================================= */
+
+/* Townsfolk -> AGENTS */
+.team-townsfolk .name,
+.team.townsfolk .name { 
+  color: var(--mi6-cyan) !important; 
+}
+aside.character .team-townsfolk aside,
+aside.character .team.townsfolk aside {
+  border-color: var(--mi6-cyan) !important;
+}
+aside.character .team-townsfolk aside::after,
+aside.character .team.townsfolk aside::after,
+aside.night-order .team-townsfolk aside::after,
+aside.night-order .team.townsfolk aside::after {
+  content: "AGENTS" !important;
+  color: var(--mi6-cyan) !important;
+}
+
+/* Outsiders -> INFORMANTS */
+.team-outsider .name,
+.team.outsider .name { 
+  color: #80deea !important; 
+}
+aside.character .team-outsider aside,
+aside.character .team.outsider aside {
+  border-color: #80deea !important;
+}
+aside.character .team-outsider aside::after,
+aside.character .team.outsider aside::after,
+aside.night-order .team-outsider aside::after,
+aside.night-order .team.outsider aside::after {
+  content: "INFORMANTS" !important;
+  color: #80deea !important;
+}
+
+/* Minions -> ROGUES */
+.team-minion .name,
+.team.minion .name { 
+  color: #ff8a80 !important; 
+}
+aside.character .team-minion aside,
+aside.character .team.minion aside {
+  border-color: #ff8a80 !important;
+}
+aside.character .team-minion aside::after,
+aside.character .team.minion aside::after,
+aside.night-order .team-minion aside::after,
+aside.night-order .team.minion aside::after {
+  content: "ROGUES" !important;
+  color: #ff8a80 !important;
+}
+
+/* Demons -> TARGETS */
+.team-demon .name,
+.team.demon .name { 
+  color: var(--mi6-red) !important; 
+}
+aside.character .team-demon aside,
+aside.character .team.demon aside {
+  border-color: var(--mi6-red) !important;
+}
+aside.character .team-demon aside::after,
+aside.character .team.demon aside::after,
+aside.night-order .team-demon aside::after,
+aside.night-order .team.demon aside::after {
+  content: "TARGETS" !important;
+  color: var(--mi6-red) !important;
+}
+
+/* Travelers & Fabled */
+.team-traveler .name { color: var(--mi6-purple) !important; }
+aside.character .team-traveler aside { border-color: var(--mi6-purple) !important; }
+aside.character .team-traveler aside::after { 
+  content: "ASSETS" !important; 
+  color: var(--mi6-purple) !important; 
+}
+
+.team-fabled .name { color: var(--mi6-gold) !important; }
+aside.character .team-fabled aside { border-color: var(--mi6-gold) !important; }
+aside.character .team-fabled aside::after { 
+  content: "PROTOCOLS" !important; 
+  color: var(--mi6-gold) !important; 
+}
+
+/* =========================================================
+   TACTICAL ACTION BUTTONS
+   ========================================================= */
+
+.button, button, input[type="button"], input[type="submit"] {
+  background: linear-gradient(180deg, #1b2230 0%, #080c14 100%) !important;
+  border: 1px solid var(--mi6-cyan) !important;
+  color: var(--mi6-cyan) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  border-radius: 2px !important;
+  padding: 6px 14px !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.button:hover, button:hover, input[type="button"]:hover {
+  background: var(--mi6-cyan) !important;
+  color: var(--mi6-black) !important;
+  box-shadow: 0 0 12px var(--mi6-cyan) !important;
+}
+
+.button:active, button:active {
+  transform: scale(0.98);
+}
+
+.button:focus-visible, button:focus-visible {
+  outline: 2px dashed var(--mi6-gold) !important;
+  outline-offset: 2px;
+}

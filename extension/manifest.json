@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "BOTC Grimoire Hub",
+  "version": "1.0.0",
+  "description": "Loads custom themes and scripts for Blood on the Clocktower (botc.app).",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://botc.app/*",
+    "https://raw.githubusercontent.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://botc.app/*",
+        "https://aerojamie.github.io/botc-custom-themes/*",
+        "http://127.0.0.1/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "themes": [
+    {
+      "id": "zeroday",
+      "name": "Zero Day",
+      "author": "Jamie",
+      "scriptName": "Operation: Zero Day by jme v1",
+      "scriptJsonUrl": "https://raw.githubusercontent.com/aerojamie/botc-custom-themes/main/scripts/zeroday.json",
+      "cssUrl": "https://raw.githubusercontent.com/aerojamie/botc-custom-themes/main/themes/zeroday.css"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood on the Clocktower - Grimoire Hub</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo-area">
+        <svg class="logo-drop" viewBox="0 0 24 24">
+          <path d="M12 2S4.5 8.5 4.5 13S8 21 12 21s7.5-3.5 7.5-8S12 2 12 2zm0 16c-2.8 0-5-2.2-5-5c0-1.8 1.2-3.8 2.6-5.1c.9-.8 1.9-1.4 2.4-1.8c.5.4 1.5 1 2.4 1.8c1.4 1.3 2.6 3.3 2.6 5.1c0 2.8-2.2 5-5 5z"/>
+        </svg>
+        <div class="logo-text">
+          <h1>BOTC Grimoire Hub</h1>
+          <p class="subtitle">Custom Scripts & Custom CSS Themes</p>
+        </div>
+      </div>
+      
+      <div class="status-badge-container">
+        <span id="extension-status" class="status-badge not-detected">Extension Not Detected</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content container">
+    <!-- Intro Section -->
+    <section class="intro-card">
+      <h2>Welcome to the Clocktower Customizer</h2>
+      <p>
+        This portal hosts custom JSON scripts and custom CSS styling overlays for the official 
+        <a href="https://botc.app" target="_blank">Blood on the Clocktower Online App</a>. 
+        Browse scripts below, copy JSON files, or auto-load custom visual layouts.
+      </p>
+      
+      <div class="setup-grid">
+        <div class="setup-box">
+          <h3>Option A: Chrome Extension</h3>
+          <p>Get a polished sidebar directly inside the botc.app game window.</p>
+          <div class="btn-group">
+            <a href="https://github.com/aerojamie/botc-custom-themes" class="web-btn web-btn-primary" target="_blank">Get Extension Source</a>
+          </div>
+          <p class="instruction-note">Load the <code>extension/</code> folder via Chrome Developer mode.</p>
+        </div>
+        
+        <div class="setup-box">
+          <h3>Option B: Tampermonkey Userscript</h3>
+          <p>Quick standalone installation using browser userscript managers.</p>
+          <div class="btn-group">
+            <a href="botc-hub.user.js" class="web-btn web-btn-secondary">Install Userscript</a>
+          </div>
+          <p class="instruction-note">Requires Tampermonkey or Greasemonkey browser extension.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog-section">
+      <div class="catalog-header">
+        <h2>Custom Scripts & Themes Catalog</h2>
+        <div class="filter-controls">
+          <input type="text" id="search-bar" placeholder="Search by theme name, script, or author...">
+        </div>
+      </div>
+
+      <div id="catalog-grid" class="catalog-grid">
+        <div class="loading-state">Loading registry database...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 BOTC Grimoire Hub. Maintained by <a href="https://github.com/aerojamie" target="_blank">Jamie</a>.</p>
+      <p><a href="https://github.com/aerojamie/botc-custom-themes" target="_blank">GitHub Repository</a> | <a href="https://botc.app" target="_blank">Blood on the Clocktower Online</a></p>
+    </div>
+  </footer>
+
+  <div id="toast-notify" class="toast-notify"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>

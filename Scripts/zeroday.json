@@ -1,0 +1,445 @@
+[
+  {
+    "id": "_meta",
+    "name": "Operation: Zero Day by jme v1",
+    "background": "https://github.com/cijamie/BOTCShortFuse/blob/main/background.webp?raw=true"
+  },
+  {
+    "id": "jme_bigredbutton_rules",
+    "name": "Special Rules",
+    "team": "fabled",
+    "ability": "There MAY be a Good & Evil Secret Agent. Secret Agents learn each other and their characters. Demon learns both Secret Agents (not which is which). Evil Agent doesn't learn Evil team. Agents' alignment cannot be changed.",
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/rules.png?raw=true"
+  },
+  {
+    "id": "jme_bigredbutton",
+    "name": "The Big Red Button",
+    "team": "fabled",
+    "ability": "Once per game, during the day, if both the Good Secret Agent and Evil Secret Agent publicly claim to be \"A Secret Agent\" and agree to Push the Big Red Button, they go to the Storyteller and secretly guess the exact character of every player. Whoever correctly guesses more characters wins the game for their team. In the event of a tie, Good wins.",
+    "setup": true,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/Bigredbutton.png?raw=true",
+    "reminders": [
+      "Button Used",
+      "Good Agent",
+      "Evil Agent"
+    ],
+    "flavor": "Mutual assured destruction or absolute victory—it only takes two keys turned at the same time.",
+    "firstNight": 1,
+    "firstNightReminder": "If the Good Secret Agent and Evil Secret Agent are in play, show them to each other. Show both Secret Agents to the Demon, but do not indicate which is which.",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_locater",
+    "name": "Locator",
+    "team": "townsfolk",
+    "ability": "You start knowing which half of the circle contains more Evil players; if they contain the same number, the result is arbitrary.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/locater.png?raw=true",
+    "reminders": [],
+    "flavor": "Frequency sweeps indicate heavy encrypted chatter coming from the east sector.",
+    "firstNight": 40,
+    "firstNightReminder": "Point to the half of the circle that contains more Evil players.",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_cryptographer",
+    "name": "Cryptographer",
+    "team": "townsfolk",
+    "ability": "You start knowing 1 Outsider. If that Outsider is executed, that Outsider loses their ability. [+0 or +1 Outsiders]",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/cryptographer.png?raw=true",
+    "reminders": [
+      "Outsider",
+      "No ability"
+    ],
+    "flavor": "Crack the cipher, contain the breach, and neutralize the compromise before it spreads.",
+    "firstNight": 35,
+    "firstNightReminder": "Show the character token of 1 in-play Outsider.",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_handler",
+    "name": "Handler",
+    "team": "townsfolk",
+    "ability": "You start knowing 2 players: 1 is Evil. If an Evil player is executed, evil abilities cannot cause extra deaths tonight or tomorrow.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/handler.png?raw=true",
+    "reminders": [
+      "Evil",
+      "Wrong",
+      "No extra deaths"
+    ],
+    "flavor": "I've flagged two assets in the field. Eliminate the double agent and their operation goes cold.",
+    "firstNight": 36,
+    "firstNightReminder": "Point to 2 players (1 of whom is Evil).",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_operative",
+    "name": "Operative",
+    "team": "townsfolk",
+    "ability": "Each night, choose a player. If the Demon kills you, learn how many of your chosen players are evil.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/operative.png?raw=true",
+    "reminders": [
+      "Chosen"
+    ],
+    "flavor": "Keep your head down. If my dead-man's switch triggers, check my intelligence dossier.",
+    "firstNight": 50,
+    "firstNightReminder": "The Operative points to a player.",
+    "otherNight": 65,
+    "otherNightReminder": "The Operative points to a player."
+  },
+  {
+    "id": "jme_safehouse",
+    "name": "Safehouse",
+    "team": "townsfolk",
+    "ability": "Each night, choose a player (different than the last): they cannot be nominated tomorrow. If you are mad as the Safehouse, you might die. If only 3 players live, you lose this ability.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/safehouse.png?raw=true",
+    "reminders": [
+      "Protected"
+    ],
+    "flavor": "Lock down the perimeter. Nobody steps out of isolation until morning.",
+    "firstNight": 25,
+    "firstNightReminder": "The Safehouse points to a player. Mark them as protected from nomination.",
+    "otherNight": 25,
+    "otherNightReminder": "The Safehouse points to a player. Mark them as protected from nomination."
+  },
+  {
+    "id": "jme_surveillancedrone",
+    "name": "Surveillance Drone",
+    "team": "townsfolk",
+    "ability": "Each night*, choose 1 dead player and 1 alive player: learn if they share a character type.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/drone.png?raw=true",
+    "reminders": [],
+    "flavor": "Cross-referencing satellite telemetry with archived field reports.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 60,
+    "otherNightReminder": "The Surveillance Drone points to 1 dead player and 1 alive player. Nod yes if they share a character type, or nod no."
+  },
+  {
+    "id": "jme_stakeout",
+    "name": "Stakeout",
+    "team": "townsfolk",
+    "ability": "Each night*, learn the alignment of a player that was put on the block but not executed yesterday.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/stakeout.png?raw=true",
+    "reminders": [
+      "On the block"
+    ],
+    "flavor": "They walked out of interrogation clean yesterday, but I followed them home.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 58,
+    "otherNightReminder": "Show the alignment thumb of a player who was put on the execution block yesterday."
+  },
+  {
+    "id": "jme_medic",
+    "name": "Medic",
+    "team": "townsfolk",
+    "ability": "Each night*, pick a player (not yourself and different than the last), that player cannot die until dawn.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/medic.png?raw=true",
+    "reminders": [
+      "Protected"
+    ],
+    "flavor": "Equip the body armor and stay low—we're getting you through tonight alive.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 22,
+    "otherNightReminder": "Medic points to a player. That player cannot die tonight."
+  },
+  {
+    "id": "jme_wiretap",
+    "name": "Wiretap",
+    "team": "townsfolk",
+    "ability": "Each night*, choose 2 players: learn if at least 1 is Evil. If both are Good, 1 is drunk until dusk.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/wiretap.png?raw=true",
+    "reminders": [
+      "Drunk"
+    ],
+    "flavor": "Tapping their private comms line. Watch out for unintended cross-talk.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 55,
+    "otherNightReminder": "Wiretap points to 2 players. Nod yes if at least 1 is Evil. If both are Good, mark 1 as Drunk."
+  },
+  {
+    "id": "jme_forensicanalyst",
+    "name": "Forensic Analyst",
+    "team": "townsfolk",
+    "ability": "Each night*, learn two characters, one of which is the character of the player most responsible for the most recent player to die.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/forensicanalysist.png?raw=true",
+    "reminders": [
+      "Died tonight"
+    ],
+    "flavor": "Ballistics and residue match the signature of a specific operative.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 70,
+    "otherNightReminder": "Show 2 character tokens (1 of which caused the most recent death)."
+  },
+  {
+    "id": "jme_bodyguard",
+    "name": "Bodyguard",
+    "team": "townsfolk",
+    "ability": "The Demon believes themself to be a different Demon. When you die, the Demon learns which Demon they are.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/bodyguard.png?raw=true",
+    "reminders": [],
+    "flavor": "Eyes up. High-value targets are covered under absolute protective detail.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_director",
+    "name": "Director",
+    "team": "townsfolk",
+    "ability": "Once per game, during the day, privately ask the Storyteller any subjective question. Learn the Storyteller's opinion.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/director.png?raw=true",
+    "reminders": [
+      "No ability"
+    ],
+    "flavor": "Headquarters, I need a high-level strategic evaluation of this asset network.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_qbranch",
+    "name": "Q Branch",
+    "team": "townsfolk",
+    "ability": "Once per game, choose to design a gadget. If granted, it might have a price & leave a clue as to its nature. Gadgets may break at any time due to dangerous field conditions.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/techie.png?raw=true",
+    "reminders": [
+      "Gadget",
+      "No ability"
+    ],
+    "flavor": "Handing out modified, unhackable gear to field operatives.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_infiltrator",
+    "name": "Infiltrator",
+    "team": "townsfolk",
+    "ability": "You are unaffected by the abilities of minions and demons who are not your alive neighbors.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/infiltrator.png?raw=true",
+    "reminders": [],
+    "flavor": "Operating under deep cover. Distant chatter can't trace my position.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_asset",
+    "name": "Asset",
+    "team": "outsider",
+    "ability": "On your first night choose 1 player. Something bad might happen if they are executed, even if you are dead. If you die at night, learn a hint as to what.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/asset.png?raw=true",
+    "reminders": [
+      "Target"
+    ],
+    "flavor": "Compromising two contacts... if either burn, collateral damage is inevitable.",
+    "firstNight": 30,
+    "firstNightReminder": "Asset points to 1 player. Mark them as the target.",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_interference",
+    "name": "Interference",
+    "team": "outsider",
+    "ability": "You think you are a Townsfolk, but you are not. When you die, 1 player is drunk from now on. You learn who.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/interference.png?raw=true",
+    "reminders": [
+      "Is Interference",
+      "Drunk"
+    ],
+    "flavor": "Heavy static on the channel... who authorized this frequency?",
+    "firstNight": 5,
+    "firstNightReminder": "Mark 1 real Townsfolk as Drunk.",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_loosecannon",
+    "name": "Loose Cannon",
+    "team": "outsider",
+    "ability": "You cannot die by execution. If the town tries to execute you, the execution fails and a living good player loses their ability permanently.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/loosecannon.png?raw=true",
+    "reminders": [
+      "Mad"
+    ],
+    "flavor": "Unpredictable leaks leave sensitive intel up for grabs by enemy agents.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_deadmansswitch",
+    "name": "Dead-Man's Switch",
+    "team": "outsider",
+    "ability": "Once per game, someone might die at any time, even if you are dead.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/deadmanswitch.png?raw=true",
+    "reminders": [],
+    "flavor": "Tension on the wire... one wrong movement triggers automatic termination.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_doubleagent",
+    "name": "Double Agent",
+    "team": "minion",
+    "ability": "Once per game, visit the Storyteller with help on how to sell a bluff. If you are put on the block, your nominator becomes evil tonight. [+0 or +1 Loose Cannon]",
+    "setup": true,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/doubleagent.png?raw=true",
+    "reminders": [
+      "No Ability",
+      "Becomes Evil"
+    ],
+    "flavor": "Feeding false intelligence to agency leadership while burning fellow operatives.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_sniper",
+    "name": "Sniper",
+    "team": "minion",
+    "ability": "Once per game, during the day, publicly choose 3 players: Guess their characters, players guessed correctly might be executed.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/sniper.png?raw=true",
+    "reminders": [
+      "No ability",
+      "Correct"
+    ],
+    "flavor": "Target profiles verified. Taking the shot.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_cleaner",
+    "name": "Cleaner",
+    "team": "minion",
+    "ability": "When a player is executed, if both of that player's alive neighbors are Good, 1 or both might die. You register as good to this ability.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/cleaner.png?raw=true",
+    "reminders": [],
+    "flavor": "Eliminating loose ends around the crime scene.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_boobytrap",
+    "name": "Booby Trap",
+    "team": "minion",
+    "ability": "If a player nominates you, they or you might die. Good Players you vote on are poisoned until dawn.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/boobytrap.png?raw=true",
+    "reminders": [
+      "Poisoned"
+    ],
+    "flavor": "Pressuring this target triggers retaliatory strikes.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": ""
+  },
+  {
+    "id": "jme_kingpin",
+    "name": "Kingpin",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. If you die to execution, an alive Minion becomes the Kingpin. If only 5 players live, you lose this ability. [+1 or +2 Outsiders]",
+    "setup": true,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/kingpin.png?raw=true",
+    "reminders": [
+      "Dead"
+    ],
+    "flavor": "Directing operations from behind closed doors. Eliminate one layer, another takes command.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 30,
+    "otherNightReminder": "Kingpin points to a player. Mark them Dead."
+  },
+  {
+    "id": "jme_sleeperagent",
+    "name": "Sleeper Agent",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. The first time a Sleeper Agent is nominated by an Evil player, swap characters with them tonight (Abilities are preserved).",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/sleeper%20agent.png?raw=true",
+    "reminders": [
+      "Dead",
+      "Swap"
+    ],
+    "flavor": "Activating contingency identity protocols on signal.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 31,
+    "otherNightReminder": "Sleeper Agent points to a player. Mark them Dead."
+  },
+  {
+    "id": "jme_blackmailer",
+    "name": "Blackmailer",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. Players who nominated you since last morning may be poisoned tonight.",
+    "setup": false,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/blackmailer.png?raw=true",
+    "reminders": [
+      "Dead",
+      "Targeted Demon"
+    ],
+    "flavor": "Anyone who points fingers finds their own dirty secrets leaked.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 32,
+    "otherNightReminder": "Blackmailer points to a player. Mark them Dead."
+  },
+  {
+    "id": "jme_zeroday",
+    "name": "Zero Day",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. If you die and 3 or more players live, a player of your choice becomes an evil Zero Day and a good player learns of a new Zero Day. If only evil voted, the vote fails. [+1 Outsider, No Minions]",
+    "setup": true,
+    "image": "https://github.com/cijamie/BOTCShortFuse/blob/main/zeroday.png?raw=true",
+    "reminders": [
+      "Dead"
+    ],
+    "flavor": "System compromise detected. Root exploit jumping to a new host.",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 33,
+    "otherNightReminder": "Zero Day points to a player. Mark them Dead. If Zero Day died today and 3+ live, choose a Good player to become the new evil Zero Day."
+  }
+]
