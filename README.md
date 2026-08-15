@@ -79,8 +79,8 @@ To expand the catalog with your own custom creations:
      "name": "My Theme Name",
      "author": "Your Name",
      "scriptName": "My Custom Script Name",
-     "scriptJsonUrl": "https://raw.githubusercontent.com/aerojamie/botc-custom-themes/main/Scripts/myscript.json",
-     "cssUrl": "https://raw.githubusercontent.com/aerojamie/botc-custom-themes/main/Themes/mytheme.css"
+     "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/myscript.json",
+     "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/mytheme.css"
    }
    ```
    *(Be sure to replace the GitHub repository URL with your own if you fork the project).*
@@ -96,3 +96,4 @@ To deploy the catalog dashboard website:
 3. Under **Build and deployment**, set the source to **Deploy from a branch**.
 4. Choose the `main` branch and root `/` directory, then click **Save**.
 5. Once built, your catalog will be live at `https://<your-username>.github.io/<your-repo-name>/`.
+"# grimoirepick" 
