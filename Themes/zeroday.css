@@ -482,3 +482,7 @@ aside.character .team-fabled aside::after {
   outline: 2px dashed var(--mi6-gold) !important;
   outline-offset: 2px;
 }
+
+.nominee-moving::before {
+    background-image: url(https://github.com/cijamie/BOTCShortFuse/blob/main/CustomClock/laserbeam.webp?raw=true) !important;
+}
