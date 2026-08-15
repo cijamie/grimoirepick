@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BOTC Grimoire Pick
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.8
 // @description  Loads custom themes and scripts for Blood on the Clocktower (botc.app)
 // @author       Jamie
 // @match        https://botc.app/*
@@ -325,8 +325,10 @@
       if (node.nodeType === Node.TEXT_NODE) {
         const textVal = node.nodeValue.trim();
         if (textVal) {
+          const textLower = textVal.toLowerCase();
           for (const name of scriptNames) {
-            if (textVal === name || textVal.includes(name)) {
+            const nameLower = name.toLowerCase();
+            if (textLower === nameLower || textLower.includes(nameLower)) {
               return name;
             }
           }
@@ -763,7 +765,7 @@
         <!-- Rendered dynamically -->
       </div>
       <div class="drawer-footer" style="padding: 10px; text-align: center; font-size: 0.65rem; color: #90a4ae; border-top: 1px solid rgba(255,255,255,0.03); background: rgba(13, 18, 29, 0.9);">
-        v1.0.4 - Active
+        v1.0.8 - Active
       </div>
     `;
     shadow.appendChild(drawer);
