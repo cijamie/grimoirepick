@@ -58,31 +58,3 @@ The project is hosted as a GitHub Pages website and runs either as a **Chrome Ex
 4. Paste it into the Tampermonkey editor and save (`Ctrl+S`).
 5. Open [botc.app](https://botc.app) to launch.
 
----
-
-## How to Add New Scripts and Themes
-
-To expand the catalog with your own custom creations:
-
-1. **Add the Script JSON**: Paste your custom script configuration file under `Scripts/myscript.json`. Ensure the script has an `_meta` field with a `name` parameter:
-   ```json
-   {
-     "id": "_meta",
-     "name": "My Custom Script Name"
-   }
-   ```
-2. **Add the CSS Stylesheet**: Add your visual styles to `Themes/mytheme.css`. Target elements in the `botc.app` layout.
-3. **Register in manifest.json**: Add a entry to the registry [manifest.json](manifest.json) at the root:
-   ```json
-   {
-     "id": "mytheme",
-     "name": "My Theme Name",
-     "author": "Your Name",
-     "scriptName": "My Custom Script Name",
-     "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/myscript.json",
-     "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/mytheme.css"
-   }
-   ```
-   *(Be sure to replace the GitHub repository URL with your own if you fork the project).*
-4. **Commit & Push**: Push your changes to your main branch. The registry is dynamically fetched, so your changes will load instantly!
-
