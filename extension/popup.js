@@ -77,6 +77,15 @@ function renderThemes() {
     const card = document.createElement('div');
     card.className = `theme-card ${isActive ? 'active' : ''}`;
     
+    let cssButtonHtml = '';
+    if (theme.cssUrl) {
+      if (isActive) {
+        cssButtonHtml = `<button class="btn btn-reset" data-action="reset" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #ff3333 !important; color: #ff3333 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Reset</button>`;
+      } else {
+        cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable auto-detection to load manually"' : ''} style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #00e5ff !important; color: #00e5ff !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load CSS</button>`;
+      }
+    }
+
     card.innerHTML = `
       <div class="theme-name">
         <span>${theme.name}</span>
@@ -84,15 +93,9 @@ function renderThemes() {
       </div>
       <div class="theme-author">By ${theme.author || 'Anonymous'}</div>
       <div class="theme-script" title="${theme.scriptName}">${theme.scriptName || 'No associated script'}</div>
-      <div class="card-actions">
-        ${theme.cssUrl
-          ? (isActive
-            ? `<button class="btn btn-reset" data-action="reset">Reset</button>`
-            : `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable auto-detection to load manually"' : ''}>Load CSS</button>`
-            )
-          : ''
-        }
-        <button class="btn btn-secondary" data-action="copy">Load JSON</button>
+      <div class="card-actions" style="display: flex !important; gap: 10px !important; margin-top: 12px !important; visibility: visible !important;">
+        ${cssButtonHtml}
+        <button class="btn btn-secondary" data-action="copy" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #d4af37 !important; color: #d4af37 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load JSON</button>
       </div>
     `;
     
