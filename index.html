@@ -35,28 +35,49 @@
         Browse scripts below, load JSON files, or auto-load custom CSS visual layouts.
       </p>
       
-      <div class="setup-grid">
-        <div class="setup-box">
-          <h3>Option A: Chrome Extension</h3>
-          <p>Get a polished sidebar directly inside the botc.app game window.</p>
-          <div class="btn-group">
-            <a href="https://github.com/cijamie/grimoirepick/releases/tag/Release" class="web-btn web-btn-primary" target="_blank">Get Extension Source</a>
+      <div class="setup-container">
+        <div class="setup-box single-box">
+          <h2>Install Grimoire Pick Chrome Extension</h2>
+          <p class="setup-desc">Get a polished sidebar catalog directly inside the official <strong>botc.app</strong> game window.</p>
+          
+          <div class="install-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <div class="step-content">
+                <strong>Download the Extension</strong>
+                <p>Click the button below to visit the releases page. Download the source code ZIP file and extract it to a folder on your computer.</p>
+                <a href="https://github.com/cijamie/grimoirepick/releases/tag/Release" class="web-btn web-btn-primary" target="_blank" style="display: inline-block; margin-top: 10px;">Get Extension Source</a>
+              </div>
+            </div>
+            
+            <div class="step">
+              <span class="step-number">2</span>
+              <div class="step-content">
+                <strong>Open Extension Settings</strong>
+                <p>Open a new tab in your Chrome browser and navigate to: <code class="highlight">chrome://extensions/</code></p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <span class="step-number">3</span>
+              <div class="step-content">
+                <strong>Enable Developer Mode</strong>
+                <p>In the top-right corner of the Extensions page, toggle the <strong>Developer mode</strong> switch to <strong>ON</strong>.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <span class="step-number">4</span>
+              <div class="step-content">
+                <strong>Load Unpacked Folder</strong>
+                <p>Click the <strong>Load unpacked</strong> button in the top-left, and select the extracted <code>extension</code> folder.</p>
+                <div class="local-path-note">
+                  On your computer, this folder is located at:<br>
+                  <code>C:\Users\jamie\Desktop\GrimoirePick\extension</code>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="instruction-note" style="margin-top: 15px; line-height: 1.5;">
-            1. Open Chrome and go to: <code>chrome://extensions/</code><br>
-            2. Enable <strong>Developer mode</strong> (top-right toggle).<br>
-            3. Click <strong>Load unpacked</strong> and select this folder: <br>
-            <code style="word-break: break-all; display: block; margin-top: 5px;">C:\Users\jamie\Desktop\GrimoirePick\extension</code>
-          </p>
-        </div>
-        
-        <div class="setup-box">
-          <h3>Option B: Tampermonkey Userscript</h3>
-          <p>Quick standalone installation using browser userscript managers.</p>
-          <div class="btn-group">
-            <a href="botc-hub.user.js" class="web-btn web-btn-secondary">Install Userscript</a>
-          </div>
-          <p class="instruction-note">Requires Tampermonkey or Greasemonkey browser extension.</p>
         </div>
       </div>
     </section>
