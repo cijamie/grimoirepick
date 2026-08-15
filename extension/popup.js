@@ -124,6 +124,12 @@ function renderThemes() {
       });
     }
     
+    card.addEventListener('mouseenter', () => {
+      const btns = card.querySelectorAll('button');
+      const actions = card.querySelector('.card-actions');
+      showToast(`Card buttons: ${btns.length} | Actions: ${actions ? 'YES' : 'NO'}`);
+    });
+    
     container.appendChild(card);
   });
 }
