@@ -39,6 +39,20 @@ div.roles .token .ability .team::after {
   font-size: 0.85rem !important;
 }
 
+/* --- SHINIGAMI -> SHINIGAMI --- */
+aside.character .team-shinigami aside::after,
+aside.character .team.shinigami aside::after,
+aside.night-order .team-shinigami aside::after,
+aside.night-order .team.shinigami aside::after {
+  content: "SHINIGAMI" !important;
+}
+
+.team-shinigami .token .ability .team::after,
+.shinigami .token .ability .team::after,
+.token[data-team="shinigami"] .ability .team::after {
+  content: "Shinigami" !important;
+}
+
 /* --- TOWNSFOLK -> TASKFORCE --- */
 aside.character .team-townsfolk aside::after,
 aside.character .team.townsfolk aside::after,
