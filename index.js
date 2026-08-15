@@ -75,9 +75,12 @@ function renderThemes() {
         Visual layout optimized for this custom edition. Loads auto-inject stylesheet and script JSON.
       </div>
       <div class="card-actions">
-        ${isActive
-          ? `<button class="web-btn web-btn-reset" data-action="reset">Reset CSS</button>`
-          : `<button class="web-btn web-btn-primary" data-action="load">Load CSS</button>`
+        ${theme.cssUrl
+          ? (isActive
+            ? `<button class="web-btn web-btn-reset" data-action="reset">Reset CSS</button>`
+            : `<button class="web-btn web-btn-primary" data-action="load">Load CSS</button>`
+            )
+          : ''
         }
         <button class="web-btn web-btn-secondary" data-action="copy">Load JSON</button>
       </div>

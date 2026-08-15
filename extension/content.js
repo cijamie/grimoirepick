@@ -826,9 +826,12 @@
         <div class="theme-author">By ${theme.author || 'Anonymous'}</div>
         <div class="theme-script">${theme.scriptName || 'No associated script name'}</div>
         <div class="card-actions">
-          ${isActive 
-            ? `<button class="btn btn-reset" data-action="reset">Reset</button>` 
-            : `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable Auto-detect to load manually"' : ''}>Load CSS</button>`
+          ${theme.cssUrl
+            ? (isActive 
+                ? `<button class="btn btn-reset" data-action="reset">Reset</button>` 
+                : `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable Auto-detect to load manually"' : ''}>Load CSS</button>`
+              )
+            : ''
           }
           <button class="btn btn-secondary" data-action="copy">Load JSON</button>
         </div>

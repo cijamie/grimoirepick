@@ -15,6 +15,20 @@
       "scriptName": "Death Note v1.2",
       "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/deathnote.json",
       "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/deathnote.css"
+    },
+    {
+      "id": "laissezunfaire",
+      "name": "Laissez un Faire",
+      "author": "Steven Medway",
+      "scriptName": "Laissez un Faire",
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/laissezunfaire.json"
+    },
+    {
+      "id": "extensioncord",
+      "name": "Extension Cord",
+      "author": "Viva La Sam",
+      "scriptName": "Extension Cord",
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/extensioncord.json"
     }
   ]
 }
