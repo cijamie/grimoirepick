@@ -251,6 +251,9 @@
 
     function searchNode(node) {
       if (node.nodeType === Node.ELEMENT_NODE) {
+        if (node.id === 'botc-grimoire-hub-root') {
+          return null;
+        }
         const tag = node.tagName.toLowerCase();
         if (tag === 'script' || tag === 'style' || tag === 'svg' || tag === 'path' || tag === 'iframe') {
           return null;
