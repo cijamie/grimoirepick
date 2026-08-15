@@ -1,6 +1,6 @@
 // BOTC Grimoire Hub Background Service Worker
 
-const DEFAULT_REGISTRY_URL = 'https://raw.githubusercontent.com/aerojamie/botc-custom-themes/main/manifest.json';
+const DEFAULT_REGISTRY_URL = 'https://raw.githubusercontent.com/cijamie/grimoirepick/main/manifest.json';
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'FETCH_REGISTRY') {

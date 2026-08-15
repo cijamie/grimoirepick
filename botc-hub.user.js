@@ -5,7 +5,7 @@
 // @description  Loads custom themes and scripts for Blood on the Clocktower (botc.app)
 // @author       Jamie
 // @match        https://botc.app/*
-// @match        https://aerojamie.github.io/botc-custom-themes/*
+// @match        https://cijamie.github.io/grimoirepick/*
 // @match        http://127.0.0.1/*
 // @match        http://localhost/*
 // @grant        GM_xmlhttpRequest
@@ -105,7 +105,7 @@
   // --- Userscript Background proxy using GM_xmlhttpRequest ---
   function sendMessageToBackground(message) {
     if (message.type === 'FETCH_REGISTRY') {
-      const url = message.url || 'https://raw.githubusercontent.com/aerojamie/botc-custom-themes/main/manifest.json';
+      const url = message.url || 'https://raw.githubusercontent.com/cijamie/grimoirepick/main/manifest.json';
       return new Promise((resolve) => {
         GM_xmlhttpRequest({
           method: 'GET',
