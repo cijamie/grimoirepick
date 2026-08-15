@@ -372,7 +372,7 @@
 
     const style = document.createElement('style');
     style.textContent = `
-      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Teko:wght@500;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Share+Tech+Mono&family=Teko:wght@500;700&display=swap');
 
       :host {
         all: initial;
@@ -387,29 +387,31 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: #0f172a;
-        border: 2px solid #00e5ff;
-        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        background: #07090e;
+        background-image: radial-gradient(circle at 50% 30%, #1e0505 0%, #07090e 100%);
+        border: 2px solid #d4af37;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 999999;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       }
       .floating-btn:hover {
         transform: scale(1.1) rotate(10deg);
-        box-shadow: 0 0 25px rgba(0, 229, 255, 0.7);
-        border-color: #ff3333;
+        box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
+        border-color: #00e5ff;
       }
       .floating-btn svg {
         width: 26px;
         height: 26px;
-        fill: #00e5ff;
-        transition: fill 0.3s;
+        fill: #d4af37;
+        transition: fill 0.3s, filter 0.3s;
       }
       .floating-btn:hover svg {
-        fill: #ff3333;
+        fill: #00e5ff;
+        filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.5));
       }
 
       /* Side Drawer */
@@ -419,11 +421,12 @@
         right: -360px;
         width: 340px;
         height: 100vh;
-        background: rgba(10, 14, 23, 0.96);
+        background: #07090e;
+        background-image: radial-gradient(circle at 50% 15%, #2a0808 0%, rgba(10, 14, 23, 0.98) 75%);
         border-left: 2px solid #d4af37;
-        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.8);
+        box-shadow: -10px 0 35px rgba(0, 0, 0, 0.8);
         z-index: 999998;
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         display: flex;
         flex-direction: column;
         color: #ffffff;
@@ -436,52 +439,59 @@
       /* Drawer Header */
       .drawer-header {
         padding: 20px;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        border-bottom: 2px solid #d4af37;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: #07090e;
+        background: rgba(13, 18, 29, 0.8);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
       }
       .drawer-title {
-        font-family: 'Teko', sans-serif;
-        font-size: 2rem;
+        font-family: 'Cinzel', serif;
+        font-size: 1.6rem;
+        font-weight: 900;
         letter-spacing: 2px;
         color: #d4af37;
         margin: 0;
         text-transform: uppercase;
         line-height: 1;
+        text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
       }
       .close-btn {
         background: none;
         border: none;
-        color: #90a4ae;
+        color: #b0bec5;
         font-size: 1.5rem;
         cursor: pointer;
         transition: color 0.2s;
       }
       .close-btn:hover {
         color: #ff3333;
+        text-shadow: 0 0 6px rgba(255, 51, 51, 0.5);
       }
 
       /* Controls Section */
       .drawer-controls {
         padding: 15px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(15, 23, 42, 0.4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        background: rgba(13, 18, 29, 0.4);
       }
       .toggle-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 15px;
-        font-size: 0.85rem;
-        color: #cfd8dc;
+        font-size: 0.8rem;
+        color: #b0bec5;
+        letter-spacing: 0.5px;
       }
       .switch {
         position: relative;
         display: inline-block;
-        width: 44px;
-        height: 22px;
+        width: 36px;
+        height: 18px;
       }
       .switch input {
         opacity: 0;
@@ -492,28 +502,28 @@
         position: absolute;
         cursor: pointer;
         top: 0; left: 0; right: 0; bottom: 0;
-        background-color: #374151;
+        background-color: #27272a;
         transition: .3s;
-        border-radius: 22px;
-        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 18px;
+        border: 1px solid rgba(212, 175, 55, 0.15);
       }
       .slider:before {
         position: absolute;
         content: "";
-        height: 14px;
-        width: 14px;
-        left: 3px;
-        bottom: 3px;
-        background-color: #cfd8dc;
+        height: 12px;
+        width: 12px;
+        left: 2px;
+        bottom: 2px;
+        background-color: #90a4ae;
         transition: .3s;
         border-radius: 50%;
       }
       input:checked + .slider {
-        background-color: rgba(0, 229, 255, 0.2);
+        background-color: rgba(0, 229, 255, 0.15);
         border-color: #00e5ff;
       }
       input:checked + .slider:before {
-        transform: translateX(22px);
+        transform: translateX(18px);
         background-color: #00e5ff;
         box-shadow: 0 0 8px #00e5ff;
       }
@@ -521,19 +531,20 @@
       .search-box {
         width: 100%;
         box-sizing: border-box;
-        background: #07090e;
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: rgba(7, 9, 14, 0.6);
+        border: 1px solid rgba(212, 175, 55, 0.25);
         color: #ffffff;
         padding: 8px 12px;
         font-family: 'Share Tech Mono', monospace;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         border-radius: 4px;
         outline: none;
-        transition: border-color 0.2s;
+        transition: all 0.2s;
       }
       .search-box:focus {
         border-color: #00e5ff;
-        box-shadow: 0 0 6px rgba(0, 229, 255, 0.2);
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+        background: rgba(7, 9, 14, 0.85);
       }
 
       /* Card List */
@@ -546,36 +557,47 @@
         gap: 15px;
       }
       .theme-card {
-        background: rgba(13, 18, 29, 0.7);
+        background: rgba(13, 18, 29, 0.55);
         border: 1px solid rgba(212, 175, 55, 0.15);
         border-radius: 6px;
         padding: 15px;
-        transition: all 0.25s;
+        transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
         position: relative;
         overflow: hidden;
       }
+      .theme-card::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 3px; height: 100%;
+        background: rgba(212, 175, 55, 0.25);
+        transition: all 0.25s;
+      }
       .theme-card:hover {
         border-color: #d4af37;
-        background: rgba(13, 18, 29, 0.95);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        background: rgba(13, 18, 29, 0.85);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+      }
+      .theme-card:hover::before {
+        background: #d4af37;
+        box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
       }
       .theme-card.active {
         border-color: #00e5ff;
-        background: rgba(13, 18, 29, 0.9);
-        box-shadow: 0 0 10px rgba(0, 229, 255, 0.15);
+        box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+        background: rgba(13, 18, 29, 0.7);
       }
       .theme-card.active::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; width: 4px; height: 100%;
         background: #00e5ff;
+        width: 4px;
         box-shadow: 0 0 8px #00e5ff;
       }
       .theme-name {
-        font-family: 'Teko', sans-serif;
-        font-size: 1.5rem;
+        font-family: 'Cinzel', serif;
+        font-size: 1.25rem;
+        font-weight: 700;
         margin: 0 0 4px 0;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
         color: #ffffff;
         text-transform: uppercase;
         display: flex;
@@ -599,54 +621,56 @@
       /* Card Buttons */
       .card-actions {
         display: flex;
-        gap: 8px;
+        gap: 10px;
       }
       .btn {
         flex: 1;
-        padding: 6px 10px;
+        padding: 6px 12px;
         font-family: 'Share Tech Mono', monospace;
-        font-size: 0.75rem;
-        border-radius: 4px;
+        font-size: 0.7rem;
+        border-radius: 20px;
         cursor: pointer;
         border: 1px solid;
         text-transform: uppercase;
         transition: all 0.2s;
         text-align: center;
+        font-weight: 600;
+        letter-spacing: 0.5px;
       }
       .btn-primary {
-        background: #07090e;
+        background: transparent;
         border-color: #00e5ff;
         color: #00e5ff;
       }
       .btn-primary:hover {
         background: #00e5ff;
         color: #07090e;
-        box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
       }
       .btn-secondary {
-        background: #07090e;
+        background: transparent;
         border-color: #d4af37;
         color: #d4af37;
       }
       .btn-secondary:hover {
         background: #d4af37;
         color: #07090e;
-        box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
       }
       .btn-reset {
-        background: #07090e;
+        background: transparent;
         border-color: #ff3333;
         color: #ff3333;
       }
       .btn-reset:hover {
         background: #ff3333;
         color: #ffffff;
-        box-shadow: 0 0 8px rgba(255, 51, 81, 0.4);
+        box-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
       }
 
       .badge {
-        font-size: 0.65rem;
-        background: rgba(0, 229, 255, 0.15);
+        font-size: 0.6rem;
+        background: rgba(0, 229, 255, 0.1);
         color: #00e5ff;
         border: 1px solid #00e5ff;
         padding: 1px 6px;
@@ -663,7 +687,7 @@
         background: rgba(0, 0, 0, 0.2);
       }
       .theme-list::-webkit-scrollbar-thumb {
-        background: rgba(212, 175, 55, 0.3);
+        background: rgba(212, 175, 55, 0.2);
         border-radius: 2px;
       }
       .theme-list::-webkit-scrollbar-thumb:hover {
@@ -675,18 +699,21 @@
         position: fixed;
         bottom: 85px;
         right: 20px;
-        background: #0e1420;
+        background: rgba(14, 20, 32, 0.95);
         border: 1px solid #d4af37;
         color: #ffffff;
         padding: 10px 18px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         border-radius: 4px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
         z-index: 999999;
         transform: translateY(20px);
         opacity: 0;
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         pointer-events: none;
+      }
+      .theme-list::-webkit-scrollbar-thumb:hover {
+        background: #00e5ff;
       }
       .toast.show {
         transform: translateY(0);
