@@ -1,0 +1,104 @@
+/* =========================================================
+   DEATH NOTE - ROLE CATEGORY NAME REPLACEMENTS
+   ========================================================= */
+
+/* 1. Collapse original vertical side text & enable replacement */
+aside.character .team aside,
+aside.night-order .team aside,
+aside.character .team-name,
+aside.character .group-title {
+  font-size: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+aside.character .team aside::after,
+aside.night-order .team aside::after,
+aside.character .team-name::after {
+  font-size: 1.35rem !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+  transform: none !important;
+  white-space: nowrap !important;
+}
+
+/* 2. Collapse original tooltip team subtitles */
+.token .ability .team,
+.token .ability span.team,
+div.roles .token .ability .team {
+  font-size: 0 !important;
+}
+
+.token .ability .team::after,
+.token .ability span.team::after,
+div.roles .token .ability .team::after {
+  font-size: 1rem !important;
+}
+
+
+/* =========================================================
+   CUSTOM LABELS: TASKFORCE / SUSPECTS / WORSHIPPERS / KIRA
+   ========================================================= */
+
+/* --- TOWNSFOLK -> TASKFORCE --- */
+aside.character .team-townsfolk aside::after,
+aside.character .team.townsfolk aside::after,
+aside.night-order .team-townsfolk aside::after,
+aside.night-order .team.townsfolk aside::after {
+  content: "TASKFORCE" !important;
+}
+
+.team-townsfolk .token .ability .team::after,
+.townsfolk .token .ability .team::after,
+.token[data-team="townsfolk"] .ability .team::after {
+  content: "Taskforce" !important;
+}
+
+
+/* --- OUTSIDERS -> SUSPECTS --- */
+aside.character .team-outsider aside::after,
+aside.character .team.outsider aside::after,
+aside.night-order .team-outsider aside::after,
+aside.night-order .team.outsider aside::after {
+  content: "SUSPECTS" !important;
+}
+
+.team-outsider .token .ability .team::after,
+.outsider .token .ability .team::after,
+.token[data-team="outsider"] .ability .team::after {
+  content: "Suspect" !important;
+}
+
+
+/* --- MINIONS -> WORSHIPPERS --- */
+aside.character .team-minion aside::after,
+aside.character .team.minion aside::after,
+aside.night-order .team-minion aside::after,
+aside.night-order .team.minion aside::after {
+  content: "WORSHIPPERS" !important;
+  font-size: 1.15rem !important; /* Slightly scaled so 11 characters fit cleanly */
+}
+
+.team-minion .token .ability .team::after,
+.minion .token .ability .team::after,
+.token[data-team="minion"] .ability .team::after {
+  content: "Worshipper" !important;
+}
+
+
+/* --- DEMONS -> KIRA --- */
+aside.character .team-demon aside::after,
+aside.character .team.demon aside::after,
+aside.night-order .team-demon aside::after,
+aside.night-order .team.demon aside::after {
+  content: "KIRA" !important;
+}
+
+.team-demon .token .ability .team::after,
+.demon .token .ability .team::after,
+.token[data-team="demon"] .ability .team::after {
+  content: "Kira" !important;
+}

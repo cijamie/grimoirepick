@@ -7,6 +7,14 @@
       "scriptName": "Operation: Zero Day by jme v1",
       "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/zeroday.json",
       "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/zeroday.css"
+    },
+    {
+      "id": "deathnote",
+      "name": "Death Note",
+      "author": "Kyra",
+      "scriptName": "Death Note v1.2",
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/deathnote.json",
+      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/deathnote.css"
     }
   ]
 }

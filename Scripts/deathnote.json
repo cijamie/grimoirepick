@@ -1,0 +1,419 @@
+[
+  {
+    "id": "_meta",
+    "name": "Death Note v1.2",
+    "author": "Kyra",
+    "almanac": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/almanac.html",
+    "background": "https://i.ibb.co/Kj7cDjbm/image-2026-06-16-013157218.png"
+  },
+  {
+    "id": "idol_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/idol_death_note_original.png",
+    "firstNightReminder": "Show the Idol a Shinigami token.",
+    "name": "Idol",
+    "team": "townsfolk",
+    "ability": "You start knowing which Shinigami is in play.",
+    "flavor": "I can’t imagine a world without Light!",
+    "firstNight": 24.9
+  },
+  {
+    "id": "watari_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/watari_death_note_original.png",
+    "firstNightReminder": "Inform Watari who L is.",
+    "otherNightReminder": "If Kira killed Watari tonight: Wake a good player. Show them the Watari token.",
+    "setup": true,
+    "name": "Watari",
+    "team": "townsfolk",
+    "ability": "You start knowing which player is L & might register as L. If you die at night, 1 good player learn this. [+L]",
+    "flavor": "Very well.",
+    "firstNight": 24.95,
+    "otherNight": 18
+  },
+  {
+    "id": "conman_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/conman_death_note_original.png",
+    "firstNightReminder": "The Con Man chooses a player.",
+    "otherNightReminder": "The Con Man chooses a player.",
+    "reminders": ["Disguised", "Misregistered"],
+    "name": "Con Man",
+    "team": "townsfolk",
+    "ability": "Each night, choose a player: they might register falsely til dusk. Tomorrow night, you learn if they did.",
+    "flavor": "A fake identity? Easy.",
+    "firstNight": 24.2,
+    "otherNight": 5
+  },
+  {
+    "id": "honorsstudent_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/honorsstudent_death_note_original.png",
+    "firstNightReminder": "The Honors Student chooses a player & a character. Nod or shake your head.",
+    "otherNightReminder": "The Honors Student chooses a player & a character. Nod or shake your head.",
+    "name": "Honors Student",
+    "team": "townsfolk",
+    "ability": "Each night, choose a player & guess their character: you learn if they are that character. You might register as evil & as Kira, even if dead.",
+    "flavor": "I only say 'if I were Kira' because I'm not Kira.",
+    "firstNight": 25,
+    "otherNight": 20
+  },
+  {
+    "id": "fbiagent_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/fbiagent_death_note_original.png",
+    "firstNightReminder": "Inform the FBI Agent which player you believe Kira should kill next.",
+    "otherNightReminder": "Inform the FBI Agent which player you believe Kira should kill next.",
+    "reminders": ["Made Mistake"],
+    "name": "FBI Agent",
+    "team": "townsfolk",
+    "ability": "Each night, you learn which player the Storyteller believes Kira should kill next. Once, this might be wrong.",
+    "flavor": "Something about this case feels wrong.",
+    "firstNight": 26,
+    "otherNight": 21
+  },
+  {
+    "id": "l_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/l_death_note_original.png",
+    "otherNightReminder": "Give L a number.",
+    "reminders": [
+      "Nominated",
+      "Nominated",
+      "Nominated",
+      "Nominated",
+      "Nominated",
+      "Drunk"
+    ],
+    "name": "L",
+    "team": "townsfolk",
+    "ability": "Each night*, you learn how many evil players were nominated today. If you die, 1 Townsfolk is drunk from now on.",
+    "flavor": "Kira is childish and he hates losing... I'm also childish and hate to lose.",
+    "otherNight": 22
+  },
+  {
+    "id": "detective_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/detective_death_note_original.png",
+    "otherNightReminder": "The Detective learns a yes or no.",
+    "reminders": ["Nominated"],
+    "name": "Detective",
+    "team": "townsfolk",
+    "ability": "Each night*, if another player nominated today's living executee, you learn if your nomination would've been a better execution.",
+    "flavor": "I can’t ignore my suspicions anymore.",
+    "otherNight": 23
+  },
+  {
+    "id": "catburglar_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/catburglar_death_note_original.png",
+    "otherNightReminder": "The Cat Burglar may choose any number of players.",
+    "reminders": ["Dead"],
+    "name": "Cat Burglar",
+    "team": "townsfolk",
+    "ability": "Once per game, at night*, choose any number of players: if all are good, you die before dusk.",
+    "flavor": "Locks only keep honest people out.",
+    "otherNight": 11
+  },
+  {
+    "id": "broadcaster_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/broadcaster_death_note_original.png",
+    "otherNightReminder": "Show the Broadcaster a character token. Put the Broadcaster to sleep. Show Kira a character token.",
+    "reminders": ["Broadcasted"],
+    "name": "Broadcaster",
+    "team": "townsfolk",
+    "ability": "Each day, you may publicly choose a player: that night, you and Kira both learn their character.",
+    "flavor": "Here are today’s news headlines.",
+    "otherNight": 19
+  },
+  {
+    "id": "decoy1_death_note_original",
+    "otherNightReminder": "If Kira killed the Decoy today or tonight: Wake the Decoy. Show the Decoy the character token they registered as. If that character is in play, point to the player with that character.",
+    "reminders": ["Decoy"],
+    "name": "Decoy",
+    "team": "townsfolk",
+    "ability": "You register as any character to Kira. If Kira kills you, you learn which character you registered as that night, and who it is if it is in play.",
+    "otherNight": 17
+  },
+  {
+    "id": "rookie_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/rookie_death_note_original.png",
+    "otherNightReminder": "If just 3 players live: Wake the Rookie. Point to Kira.",
+    "reminders": ["Drunk"],
+    "name": "Rookie",
+    "team": "townsfolk",
+    "ability": "When just 3 players live, Kira is drunk & you learn which player is Kira that night.",
+    "flavor": "Stop it already!",
+    "otherNight": 12
+  },
+  {
+    "id": "near_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/near_death_note_original.png",
+    "reminders": ["Nominated", "Drunk"],
+    "name": "Near",
+    "team": "townsfolk",
+    "ability": "If you nominate an evil player (different to yesterday), they are drunk until dusk tomorrow.",
+    "flavor": "If you can’t win the game, if you can’t solve the puzzle, then you’re just a loser."
+  },
+  {
+    "id": "bodyguard_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/bodyguard_death_note_original.png",
+    "reminders": [
+      "Sober & Healthy",
+      "Sober & Healthy",
+      "Sober & Healthy",
+      "Sober & Healthy",
+      "Sober & Healthy"
+    ],
+    "name": "Bodyguard",
+    "team": "townsfolk",
+    "ability": "Good players you have nominated are sober, healthy & receive true information from now on.",
+    "flavor": "I'm not on anyone's side. I just want to see this through to the end."
+  },
+  {
+    "id": "conspirator_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/conspirator_death_note_original.png",
+    "firstNightReminder": "Point to the player who misregistered because of the Conspirator. If no one did: Point to an arbitrary player.",
+    "otherNightReminder": "Point to the player who misregistered because of the Conspirator. If no one did: Point to an arbitrary player.",
+    "reminders": ["Misregistered"],
+    "name": "Conspirator",
+    "team": "outsider",
+    "ability": "Each night, a player might register falsely once. You learn who did, or an arbitrary player if it was no-one.",
+    "flavor": "Looks like I drew the short straw.",
+    "firstNight": 27,
+    "otherNight": 25
+  },
+  {
+    "id": "mello_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/mello_death_note_original.png",
+    "firstNightReminder": "Mello chooses a player. Put Mello to sleep. If Mello chose a Minion or Kira: wake the Minion or Kira. Show the THIS PLAYER IS and Mello tokens. Point to Mello, then Mello's choice.",
+    "otherNightReminder": "Mello chooses a player. Put Mello to sleep. If Mello chose a Minion or Kira: wake the Minion or Kira. Show the THIS PLAYER IS and Mello tokens. Point to Mello, then Mello's choice.",
+    "reminders": ["Chosen", "Dead"],
+    "name": "Mello",
+    "team": "outsider",
+    "ability": "Each night, choose a living player: if evil, Kira learns you & your choice. The previously chosen player then dies. ",
+    "flavor": "It's not just the notebook I'm after. I wanna eliminate my competition. I will be the best. I don't care what it takes.",
+    "firstNight": 24.8,
+    "otherNight": 18
+  },
+  {
+    "id": "executive_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/executive_death_note_original.png",
+    "firstNightReminder": "Wake the Minions. Point to the Executive. Minions decide whether the Executive switches characters and alignments with Kira. Put the Minions to sleep. Inform Kira and the Executive of their new characters and alignment.",
+    "otherNightReminder": "Wake the Minions. Point to the Executive. Minions decide whether the Executive switches characters and alignments with Kira. Put the Minions to sleep. Inform Kira and the Executive of their new characters and alignment.",
+    "name": "Executive",
+    "team": "outsider",
+    "ability": "All Minions know who you are. Each night, they choose if you swap characters and alignments with a living Kira. ",
+    "flavor": "I'm not giving up until I have EVERYTHING!",
+    "firstNight": 24.5,
+    "otherNight": 9
+  },
+  {
+    "id": "shutin_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/shutin_death_note_original.png",
+    "otherNightReminder": "If the Shut-In killed a player today: Wake the Shut-In. Point to that player.",
+    "reminders": ["Died"],
+    "name": "Shut-In",
+    "team": "outsider",
+    "ability": "Each day, a player \"mad\" about being their character might die. Each night*, you learn who died to your ability today.",
+    "flavor": "Killing is the only way I can help.",
+    "otherNight": 24
+  },
+  {
+    "id": "disciple_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/disciple_death_note_original.png",
+    "firstNightReminder": "The Disciple chooses a player and a character. Nod or shake your head.",
+    "otherNightReminder": "The Disciple chooses a player and a character. Nod or shake your head.",
+    "reminders": ["Doomed?"],
+    "name": "Disciple",
+    "team": "minion",
+    "ability": "Each night, choose a player & guess their character: if right, you learn this & they might die tomorrow day.",
+    "flavor": "There is no reason for me to question. God is absolute. My job is to do as God wishes.",
+    "firstNight": 24.4,
+    "otherNight": 7
+  },
+  {
+    "id": "follower_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/follower_death_note_original.png",
+    "firstNightReminder": "The Follower chooses a player. Show a character token. The Follower may once poison the chosen player.",
+    "otherNightReminder": "The Follower chooses a player. Show a character token. The Follower may once poison the chosen player.",
+    "reminders": ["Poisoned"],
+    "name": "Follower",
+    "team": "minion",
+    "ability": "Each night, choose a player: you learn their character. Once per game, you may poison your chosen player.",
+    "flavor": "I gave up half my life... to get the Shinigami eyes.",
+    "firstNight": 24.3,
+    "otherNight": 6
+  },
+  {
+    "id": "propagandist_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/propagandist_death_note_original.png",
+    "reminders": ["Misregisters", "Outsider Died Today"],
+    "setup": true,
+    "name": "Propagandist",
+    "team": "minion",
+    "ability": "The Xth player nominated each day registers as a different character & alignment until dusk tomorrow. The 1st time an Outsider dies, you learn X that night. [X Outsiders]",
+    "flavor": "Come on, everyone. The new age of Kira is about to arrive!"
+  },
+  {
+    "id": "spokesperson_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/spokesperson_death_note_original.png",
+    "otherNightReminder": "If Kira died for the first time today or tonight: Wake the Spokesperson. They choose 3 good players. Put the Spokesperson to sleep. Wake the chosen good players individually. One learns they are an evil Kira, and the others are shown the THIS CHARACTER IS IN PLAY and Spokesperson tokens.",
+    "reminders": ["Is Kira", "No Ability"],
+    "name": "Spokesperson",
+    "team": "minion",
+    "ability": "The 1st time Kira dies by execution while 3 or more good players live, you are woken to choose 3 living good players: one becomes an evil Kira, and the others learn you are in play.",
+    "flavor": "All the messages from Kira I have conveyed to you in the past as well as everything I will tell you in the future will become the law of this world.",
+    "otherNight": 8
+  },
+  {
+    "id": "kira_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/kira_death_note_original.png",
+    "firstNightReminder": "Kira chooses 2 players & characters.",
+    "otherNightReminder": "Kira chooses 2 players & characters.",
+    "reminders": ["Doomed", "Doomed", "Doomed", "Doomed", "Doomed"],
+    "name": "Kira",
+    "team": "demon",
+    "ability": "Each night, choose 2 players & guess their characters: any guessed correctly might die before dusk.",
+    "flavor": "I will become the god of this new world!",
+    "firstNight": 24.6,
+    "otherNight": 13
+  },
+  {
+    "id": "secondkira_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Second_Kira/secondkira_death_note_original.png",
+    "firstNightReminder": "Second Kira points to a player. Show a character token. Second Kira chooses a player & a character.",
+    "otherNightReminder": "Second Kira points to a player. Show a character token. Second Kira chooses a player & a character.",
+    "reminders": ["Doomed", "Doomed", "Doomed", "Doomed", "Doomed"],
+    "name": "Second Kira",
+    "team": "demon",
+    "ability": "Each night, choose a player: you learn their character. Then, choose a player & guess their character: if correct, they might die before dusk.",
+    "flavor": "What a wonderful way to kill…",
+    "firstNight": 24.7,
+    "otherNight": 14
+  },
+  {
+    "id": "xkira_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/X_Kira/xkira_death_note_original.png",
+    "firstNightReminder": "X-Kira chooses up to 5 players & characters.",
+    "otherNightReminder": "X-Kira chooses up to 5 players & characters.",
+    "reminders": ["Doomed", "Doomed", "Doomed", "Doomed", "Doomed"],
+    "name": "X-Kira",
+    "team": "demon",
+    "ability": "Each night, choose up to 5 players & guess their characters: if you guess all right, all might die before dusk.",
+    "flavor": "Delete! Delete! Delete! Delete! Delete! ",
+    "otherNight": 15
+  },
+  {
+    "id": "beyondbirthday_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/beyondbirthday_death_note_original.png",
+    "firstNightReminder": "Show Beyond Birthday the Grimoire. Beyond Birthday chooses 1 player for each removed Minion.",
+    "otherNightReminder": "Any players not chosen by Beyond Birthday might die.",
+    "reminders": ["BB", "BB", "BB", "BB"],
+    "setup": true,
+    "name": "Beyond Birthday",
+    "team": "demon",
+    "ability": "On your 1st night, see the Grimoire & choose 1 player per removed Minion: the Storyteller may break game rules pertaining to them & 1 other. Others might die at any time. [No Minions]",
+    "special": [
+      {
+        "name": "grimoire",
+        "type": "signal",
+        "time": "night"
+      }
+    ],
+    "flavor": "If only I could see the death of the world.",
+    "firstNight": 24.55,
+    "otherNight": 16
+  },
+  {
+    "id": "godsofdeath_death_note_original",
+    "firstNightReminder": "Show Kira the in-play Shinigami token.",
+    "otherNightReminder": "If a new player is Kira: Show Kira the in-play Shinigami token.",
+    "setup": true,
+    "name": "Gods of Death",
+    "team": "fabled",
+    "ability": "The Storyteller is assigned a Shinigami during setup. Kira knows which.",
+    "flavor": "The human world is boring... but watching it rot? Now that's entertainment.",
+    "firstNight": 14,
+    "otherNight": 10
+  },
+  {
+    "id": "gelus_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/gelus_death_note_original.png",
+    "firstNightReminder": "Once, you may kill a player or prevent one from dying.",
+    "otherNightReminder": "Once, you may kill a player or prevent one from dying.",
+    "reminders": ["Dead", "Life Extended", "No Ability"],
+    "name": "Gelus",
+    "team": "fabled",
+    "ability": "Once per game, at night or during the day, you may kill a player or prevent one from dying.",
+    "flavor": "I'll protect you. I... truly love you.",
+    "firstNight": 13,
+    "otherNight": 4
+  },
+  {
+    "id": "rem_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/rem_death_note_original.png",
+    "firstNightReminder": "Once, wake two evil players. Show the YOU ARE and character tokens they swapped into. Put the evil players to sleep. Wake a good player. Show the THIS CHARACTER SELECTED YOU and Rem tokens.",
+    "otherNightReminder": "Once, wake two evil players. Show the YOU ARE and character tokens they swapped into. Put the evil players to sleep. Wake a good player. Show the THIS CHARACTER SELECTED YOU and Rem tokens.",
+    "reminders": ["No Ability", "Learns"],
+    "name": "Rem",
+    "team": "fabled",
+    "ability": "Once per game, at night, you may choose 2 evil players to swap characters. A good player learns when this happens.",
+    "flavor": "There are things much more important than life.",
+    "firstNight": 12,
+    "otherNight": 3
+  },
+  {
+    "id": "ryuk_death_note_original",
+    "image": "https://bloodstar.clocktica.com/p/Linkna/Death_Note_Original/ryuk_death_note_original.png",
+    "firstNightReminder": "You may wake the players you wish to be the Kira and Minions individually. Show the YOU ARE and character tokens, and a thumbs down.",
+    "otherNightReminder": "On night 2, if you didn't act yesterday: Wake the players you wish to be the Kira and Minions individually. Show the YOU ARE and character tokens, and a thumbs down.",
+    "setup": true,
+    "name": "Ryuk",
+    "team": "fabled",
+    "ability": "Minions & Kira think they're good characters until the 1st or 2nd night. [You choose which players are which Kira & Minions]",
+    "flavor": "Humans are so... interesting.",
+    "firstNight": 11,
+    "otherNight": 2
+  },
+  {
+    "id": "sidoh_death_note_original",
+    "setup": false,
+    "name": "Sidoh",
+    "team": "fabled",
+    "ability": "Once per game, at night, choose a player: they become a Townsfolk if an Outsider, or an Outsider if a Townsfolk.",
+    "flavor": "What's with this guy? He's human but he's scary."
+  },
+  {
+    "id": "prosecutor_death_note_original",
+    "name": "Prosecutor",
+    "team": "traveler",
+    "ability": "Once per game, during the day, publicly choose a player (not yourself): they then choose another player, who dies."
+  },
+  {
+    "id": "armonia_death_note_original",
+    "name": "Armonia",
+    "team": "traveler",
+    "ability": "On your 1st night, you gain a not-in-play Shinigami ability. If a setup ability, in-play characters & alignments might change."
+  },
+  {
+    "id": "decoy_death_note_original",
+    "reminders": ["Saved"],
+    "name": "Decoy",
+    "team": "traveler",
+    "ability": "If a player of your alignment dies (not by execution), all players might learn them & you die instead."
+  },
+  {
+    "id": "kingofdeath_death_note_original",
+    "otherNightReminder": "Point to any players who died today or tonight.",
+    "reminders": [
+      "Died Today",
+      "Died Today",
+      "Died Today",
+      "Died Today",
+      "Died Today"
+    ],
+    "name": "King of Death",
+    "team": "traveler",
+    "ability": "Players who die register as alive during the day & think they're alive at night. Each night*, you learn which players died since dawn.",
+    "otherNight": 26
+  },
+  {
+    "id": "midora_death_note_original",
+    "name": "Midora",
+    "team": "traveler",
+    "ability": "Kira's ability is modified. Each day, you may visit the Storyteller for a hint as to how."
+  }
+]
