@@ -761,6 +761,9 @@
       <div class="theme-list" id="theme-list-container">
         <!-- Rendered dynamically -->
       </div>
+      <div class="drawer-footer" style="padding: 10px; text-align: center; font-size: 0.65rem; color: #90a4ae; border-top: 1px solid rgba(255,255,255,0.03); background: rgba(13, 18, 29, 0.9);">
+        v1.0.4 - Active
+      </div>
     `;
     shadow.appendChild(drawer);
 
@@ -825,9 +828,9 @@
       let cssButtonHtml = '';
       if (theme.cssUrl) {
         if (isActive) {
-          cssButtonHtml = `<button class="btn btn-reset" data-action="reset">Reset</button>`;
+          cssButtonHtml = `<button class="btn btn-reset" data-action="reset" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #ff3333 !important; color: #ff3333 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Reset</button>`;
         } else {
-          cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable Auto-detect to load manually"' : ''}>Load CSS</button>`;
+          cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable Auto-detect to load manually"' : ''} style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #00e5ff !important; color: #00e5ff !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load CSS</button>`;
         }
       }
 
@@ -838,9 +841,9 @@
         </div>
         <div class="theme-author">By ${theme.author || 'Anonymous'}</div>
         <div class="theme-script">${theme.scriptName || 'No associated script name'}</div>
-        <div class="card-actions">
+        <div class="card-actions" style="display: flex !important; gap: 10px !important; margin-top: 12px !important; visibility: visible !important;">
           ${cssButtonHtml}
-          <button class="btn btn-secondary" data-action="copy">Load JSON</button>
+          <button class="btn btn-secondary" data-action="copy" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #d4af37 !important; color: #d4af37 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load JSON</button>
         </div>
       `;
 
