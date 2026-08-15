@@ -209,6 +209,38 @@
     }
   }
 
+  function findAndClickPasteButton() {
+    function searchNode(node) {
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        if (node.id === 'botc-grimoire-hub-root') return null;
+      }
+      if (node.shadowRoot) {
+        const found = searchNode(node.shadowRoot);
+        if (found) return found;
+      }
+      let child = node.firstChild;
+      while (child) {
+        const found = searchNode(child);
+        if (found) return found;
+        child = child.nextSibling;
+      }
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        const tagName = node.tagName.toLowerCase();
+        const text = node.textContent ? node.textContent.trim() : '';
+        if (text === 'PASTE' && (tagName === 'button' || tagName === 'div' || tagName === 'span' || tagName === 'a')) {
+          return node;
+        }
+      }
+      return null;
+    }
+    const pasteBtn = searchNode(document.body);
+    if (pasteBtn) {
+      pasteBtn.click();
+      return true;
+    }
+    return false;
+  }
+
   // --- Load Script JSON & Simulate Paste ---
   async function loadScriptJson(theme) {
     if (!theme.scriptJsonUrl) return;
@@ -218,11 +250,21 @@
       const response = await sendMessageToBackground({ type: 'FETCH_TEXT', url: theme.scriptJsonUrl });
       if (response && response.success) {
         navigator.clipboard.writeText(response.data).then(() => {
-          showToast(`Script "${theme.name}" loaded into game!`);
-          simulatePaste(response.data);
+          const clicked = findAndClickPasteButton();
+          if (clicked) {
+            showToast(`Script "${theme.name}" loaded into game!`);
+          } else {
+            simulatePaste(response.data);
+            showToast(`Script "${theme.name}" copied! Click "PASTE" on the screen.`);
+          }
         }).catch(err => {
-          simulatePaste(response.data);
-          showToast(`Script "${theme.name}" loaded into game!`);
+          const clicked = findAndClickPasteButton();
+          if (clicked) {
+            showToast(`Script "${theme.name}" loaded into game!`);
+          } else {
+            simulatePaste(response.data);
+            showToast(`Script "${theme.name}" copied! Click "PASTE" on the screen.`);
+          }
         });
       } else {
         throw new Error(response.error || 'Failed to fetch');
