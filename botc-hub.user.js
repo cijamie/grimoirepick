@@ -621,47 +621,53 @@
       
       /* Card Buttons */
       .card-actions {
-        display: flex;
-        gap: 10px;
+        display: flex !important;
+        gap: 10px !important;
+        margin-top: 12px !important;
+        visibility: visible !important;
       }
       .btn {
-        flex: 1;
-        padding: 6px 12px;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.7rem;
-        border-radius: 20px;
-        cursor: pointer;
-        border: 1px solid;
-        text-transform: uppercase;
-        transition: all 0.2s;
-        text-align: center;
-        font-weight: 600;
-        letter-spacing: 0.5px;
+        display: inline-block !important;
+        flex: 1 !important;
+        padding: 6px 12px !important;
+        font-family: 'Share Tech Mono', monospace !important;
+        font-size: 0.7rem !important;
+        border-radius: 20px !important;
+        cursor: pointer !important;
+        border: 1px solid currentColor !important;
+        text-transform: uppercase !important;
+        transition: all 0.2s !important;
+        text-align: center !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.5px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
       }
       .btn-primary {
-        background: transparent;
-        border-color: #00e5ff;
-        color: #00e5ff;
+        background: transparent !important;
+        border-color: #00e5ff !important;
+        color: #00e5ff !important;
       }
       .btn-primary:hover {
-        background: #00e5ff;
-        color: #07090e;
-        box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+        background: #00e5ff !important;
+        color: #07090e !important;
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.4) !important;
       }
       .btn-secondary {
-        background: transparent;
-        border-color: #d4af37;
-        color: #d4af37;
+        background: transparent !important;
+        border-color: #d4af37 !important;
+        color: #d4af37 !important;
       }
       .btn-secondary:hover {
-        background: #d4af37;
-        color: #07090e;
-        box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        background: #d4af37 !important;
+        color: #07090e !important;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
       }
       .btn-reset {
-        background: transparent;
-        border-color: #ff3333;
-        color: #ff3333;
+        background: transparent !important;
+        border-color: #ff3333 !important;
+        color: #ff3333 !important;
       }
       .btn-reset:hover {
         background: #ff3333;
