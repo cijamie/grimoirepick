@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "BOTC Grimoire Hub",
+  "name": "BOTC Grimoire Pick",
   "version": "1.0.0",
   "description": "Loads custom themes and scripts for Blood on the Clocktower (botc.app).",
   "permissions": [

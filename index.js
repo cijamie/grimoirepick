@@ -163,7 +163,7 @@ function detectExtension() {
   const badge = document.getElementById('extension-status');
   if (badge) {
     if (isInstalled) {
-      badge.textContent = "Grimoire Hub Installed";
+      badge.textContent = "Grimoire Pick Installed";
       badge.className = "status-badge detected";
     } else {
       badge.textContent = "Extension Not Detected";

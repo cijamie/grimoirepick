@@ -1,6 +1,6 @@
-# BOTC Grimoire Hub 🩸🔮
+# BOTC Grimoire Pick 🩸🔮
 
-**BOTC Grimoire Hub** is a visual customizer and script catalog helper designed for the official [Blood on the Clocktower Online App](https://botc.app). 
+**BOTC Grimoire Pick** is a visual customizer and script catalog helper designed for the official [Blood on the Clocktower Online App](https://botc.app). 
 
 It allows hosts (Storytellers) and players to easily browse custom scripts, copy script JSON configurations to the clipboard, and dynamically inject custom visual CSS overlays directly into the game window. It features **Automatic Script Detection**—when you open or join a game room using a registered script, the hub automatically detects it and applies the corresponding visual theme.
 

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         BOTC Grimoire Hub
+// @name         BOTC Grimoire Pick
 // @namespace    http://tampermonkey.net/
 // @version      1.0.0
 // @description  Loads custom themes and scripts for Blood on the Clocktower (botc.app)
@@ -639,7 +639,7 @@
 
     const floatBtn = document.createElement('button');
     floatBtn.className = 'floating-btn';
-    floatBtn.title = 'BOTC Grimoire Hub (Userscript)';
+    floatBtn.title = 'BOTC Grimoire Pick (Userscript)';
     floatBtn.innerHTML = `
       <svg viewBox="0 0 24 24">
         <path d="M12 2S4.5 8.5 4.5 13S8 21 12 21s7.5-3.5 7.5-8S12 2 12 2zm0 16c-2.8 0-5-2.2-5-5c0-1.8 1.2-3.8 2.6-5.1c.9-.8 1.9-1.4 2.4-1.8c.5.4 1.5 1 2.4 1.8c1.4 1.3 2.6 3.3 2.6 5.1c0 2.8-2.2 5-5 5z"/>
@@ -651,7 +651,7 @@
     drawer.className = 'drawer';
     drawer.innerHTML = `
       <div class="drawer-header">
-        <h2 class="drawer-title">Grimoire Hub</h2>
+        <h2 class="drawer-title">Grimoire Pick</h2>
         <button class="close-btn">&times;</button>
       </div>
       <div class="drawer-controls">
