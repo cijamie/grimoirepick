@@ -113,10 +113,21 @@
 
   // --- Message Communication Helper ---
   function sendMessageToBackground(message) {
-    return new Promise((resolve) => {
-      chrome.runtime.sendMessage(message, (response) => {
-        resolve(response);
-      });
+    return new Promise((resolve, reject) => {
+      try {
+        if (!chrome.runtime || !chrome.runtime.id) {
+          return reject(new Error('Extension context invalidated.'));
+        }
+        chrome.runtime.sendMessage(message, (response) => {
+          if (chrome.runtime.lastError) {
+            reject(new Error(chrome.runtime.lastError.message));
+          } else {
+            resolve(response);
+          }
+        });
+      } catch (err) {
+        reject(err);
+      }
     });
   }
 
@@ -144,7 +155,11 @@
       }
     } catch (err) {
       console.error('Failed to load theme CSS:', err);
-      showToast(`Error loading theme: ${err.message}`, true);
+      if (err.message && (err.message.includes('context invalidated') || err.message.includes('Extension context invalidated'))) {
+        showToast('Extension updated! Please refresh the page.', true);
+      } else {
+        showToast(`Error loading theme: ${err.message}`, true);
+      }
     }
   }
 
@@ -177,7 +192,11 @@
       }
     } catch (err) {
       console.error('Failed to copy script JSON:', err);
-      showToast(`Error copying JSON: ${err.message}`, true);
+      if (err.message && (err.message.includes('context invalidated') || err.message.includes('Extension context invalidated'))) {
+        showToast('Extension updated! Please refresh the page.', true);
+      } else {
+        showToast(`Error copying JSON: ${err.message}`, true);
+      }
     }
   }
 
