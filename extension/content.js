@@ -572,6 +572,7 @@ window.onerror = function(message, source, lineno, colno, error) {
         transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
         position: relative;
         overflow: hidden;
+        flex-shrink: 0 !important;
       }
       .theme-card::before {
         content: "";
