@@ -278,6 +278,22 @@ window.onerror = function(message, source, lineno, colno, error) {
     setInterval(() => {
       if (!autoDetectEnabled || !registry || !registry.themes) return;
 
+      // Diagnostic DOM check for category names
+      const charSheet = document.querySelector('aside.character');
+      if (charSheet) {
+        const teamSections = charSheet.querySelectorAll('.team, [class*="team"]');
+        if (teamSections.length > 0) {
+          const list = Array.from(teamSections).map(el => {
+            const classes = Array.from(el.classList).join('.');
+            const asideEl = el.querySelector('aside');
+            const hasAside = asideEl ? 'HAS_ASIDE' : 'NO_ASIDE';
+            const asideContent = asideEl ? asideEl.innerText.trim() : 'NONE';
+            return `${el.tagName.toLowerCase()}.${classes} (${hasAside}: "${asideContent}")`;
+          }).join(' | ');
+          console.log('BOTC Grimoire Hub Teams:', list);
+        }
+      }
+
       const detected = scanForActiveScript();
       if (detected !== lastDetectedScriptName) {
         lastDetectedScriptName = detected;
