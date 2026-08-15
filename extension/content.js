@@ -806,7 +806,8 @@
 
     const query = searchQuery.toLowerCase().trim();
     const filteredThemes = registry.themes.filter(theme => {
-      return theme.name.toLowerCase().includes(query) ||
+      if (!query) return true;
+      return (theme.name && theme.name.toLowerCase().includes(query)) ||
              (theme.author && theme.author.toLowerCase().includes(query)) ||
              (theme.scriptName && theme.scriptName.toLowerCase().includes(query));
     });
@@ -818,6 +819,15 @@
       const card = document.createElement('div');
       card.className = `theme-card ${isActive ? 'active' : ''}`;
       
+      let cssButtonHtml = '';
+      if (theme.cssUrl) {
+        if (isActive) {
+          cssButtonHtml = `<button class="btn btn-reset" data-action="reset">Reset</button>`;
+        } else {
+          cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable Auto-detect to load manually"' : ''}>Load CSS</button>`;
+        }
+      }
+
       card.innerHTML = `
         <div class="theme-name">
           <span>${theme.name}</span>
@@ -826,13 +836,7 @@
         <div class="theme-author">By ${theme.author || 'Anonymous'}</div>
         <div class="theme-script">${theme.scriptName || 'No associated script name'}</div>
         <div class="card-actions">
-          ${theme.cssUrl
-            ? (isActive 
-                ? `<button class="btn btn-reset" data-action="reset">Reset</button>` 
-                : `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable Auto-detect to load manually"' : ''}>Load CSS</button>`
-              )
-            : ''
-          }
+          ${cssButtonHtml}
           <button class="btn btn-secondary" data-action="copy">Load JSON</button>
         </div>
       `;
