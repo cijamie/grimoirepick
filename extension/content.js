@@ -85,6 +85,10 @@
           }
           updateUIState();
           sendResponse({ success: true });
+        } else if (message.type === 'SIMULATE_PASTE') {
+          simulatePaste(message.text);
+          showToast(`Script JSON loaded into game!`);
+          sendResponse({ success: true });
         }
       });
 
@@ -174,28 +178,48 @@
     showToast('Theme reset to default.');
   }
 
-  // --- Copy Script JSON ---
-  async function copyScriptJson(theme) {
+  function simulatePaste(text) {
+    try {
+      const dataTransfer = new DataTransfer();
+      dataTransfer.setData('text/plain', text);
+      const event = new ClipboardEvent('paste', {
+        clipboardData: dataTransfer,
+        bubbles: true,
+        cancelable: true
+      });
+      const target = document.activeElement || document.body;
+      target.dispatchEvent(event);
+      document.dispatchEvent(event);
+      window.dispatchEvent(event);
+    } catch (err) {
+      console.error('Failed to simulate paste event:', err);
+    }
+  }
+
+  // --- Load Script JSON & Simulate Paste ---
+  async function loadScriptJson(theme) {
     if (!theme.scriptJsonUrl) return;
 
     try {
-      showToast('Fetching script JSON...');
+      showToast('Loading script JSON...');
       const response = await sendMessageToBackground({ type: 'FETCH_TEXT', url: theme.scriptJsonUrl });
       if (response && response.success) {
         navigator.clipboard.writeText(response.data).then(() => {
-          showToast(`Script JSON for "${theme.name}" copied to clipboard!`);
+          showToast(`Script "${theme.name}" loaded into game!`);
+          simulatePaste(response.data);
         }).catch(err => {
-          throw new Error('Clipboard access denied');
+          simulatePaste(response.data);
+          showToast(`Script "${theme.name}" loaded into game!`);
         });
       } else {
         throw new Error(response.error || 'Failed to fetch');
       }
     } catch (err) {
-      console.error('Failed to copy script JSON:', err);
+      console.error('Failed to load script JSON:', err);
       if (err.message && (err.message.includes('context invalidated') || err.message.includes('Extension context invalidated'))) {
         showToast('Extension updated! Please refresh the page.', true);
       } else {
-        showToast(`Error copying JSON: ${err.message}`, true);
+        showToast(`Error loading script: ${err.message}`, true);
       }
     }
   }
@@ -739,15 +763,15 @@
         <div class="card-actions">
           ${isActive 
             ? `<button class="btn btn-reset" data-action="reset">Reset</button>` 
-            : `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable Auto-detect to load manually"' : ''}>Load</button>`
+            : `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable Auto-detect to load manually"' : ''}>Load CSS</button>`
           }
-          <button class="btn btn-secondary" data-action="copy">Copy JSON</button>
+          <button class="btn btn-secondary" data-action="copy">Load JSON</button>
         </div>
       `;
 
       // Event handlers for card buttons
       card.querySelector('[data-action="copy"]').addEventListener('click', () => {
-        copyScriptJson(theme);
+        loadScriptJson(theme);
       });
 
       const loadBtn = card.querySelector('[data-action="load"]');

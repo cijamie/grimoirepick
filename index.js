@@ -76,10 +76,10 @@ function renderThemes() {
       </div>
       <div class="card-actions">
         ${isActive
-          ? `<button class="web-btn web-btn-reset" data-action="reset">Reset Theme</button>`
-          : `<button class="web-btn web-btn-primary" data-action="load">Load Theme</button>`
+          ? `<button class="web-btn web-btn-reset" data-action="reset">Reset CSS</button>`
+          : `<button class="web-btn web-btn-primary" data-action="load">Load CSS</button>`
         }
-        <button class="web-btn web-btn-secondary" data-action="copy">Copy JSON</button>
+        <button class="web-btn web-btn-secondary" data-action="copy">Load JSON</button>
       </div>
     `;
 
@@ -119,7 +119,7 @@ function loadTheme(theme) {
   // Check if extension is installed to give appropriate feedback
   const isInstalled = document.documentElement.dataset.botcHubInstalled === "true";
   if (isInstalled) {
-    showToast(`Theme "${theme.name}" loaded successfully! Open botc.app to see it.`);
+    showToast(`CSS Theme "${theme.name}" loaded successfully! Open botc.app to see it.`);
   } else {
     showToast(`JSON copied! Install the Extension or Userscript to auto-load the CSS overlay.`);
     // Fallback: Copy script json to clipboard to help them anyway
@@ -150,11 +150,11 @@ async function copyScriptJson(theme, silent = false) {
     
     await navigator.clipboard.writeText(text);
     if (!silent) {
-      showToast(`Script JSON for "${theme.name}" copied to clipboard!`);
+      showToast(`Script JSON for "${theme.name}" copied! Paste on botc.app to load.`);
     }
   } catch (err) {
     console.error('Failed to copy script JSON:', err);
-    showToast(`Failed to copy script: ${err.message}`);
+    showToast(`Failed to load script: ${err.message}`);
   }
 }
 

@@ -87,14 +87,14 @@ function renderThemes() {
       <div class="card-actions">
         ${isActive
           ? `<button class="btn btn-reset" data-action="reset">Reset</button>`
-          : `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable auto-detection to load manually"' : ''}>Load</button>`
+          : `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable auto-detection to load manually"' : ''}>Load CSS</button>`
         }
-        <button class="btn btn-secondary" data-action="copy">Copy JSON</button>
+        <button class="btn btn-secondary" data-action="copy">Load JSON</button>
       </div>
     `;
     
     card.querySelector('[data-action="copy"]').addEventListener('click', () => {
-      copyScriptJson(theme);
+      loadScriptJson(theme);
     });
     
     const loadBtn = card.querySelector('[data-action="load"]');
@@ -133,15 +133,17 @@ function resetTheme() {
   });
 }
 
-function copyScriptJson(theme) {
+function loadScriptJson(theme) {
   if (!theme.scriptJsonUrl) return;
-  showToast('Fetching script JSON...');
+  showToast('Loading script JSON...');
   chrome.runtime.sendMessage({ type: 'FETCH_TEXT', url: theme.scriptJsonUrl }, (response) => {
     if (response && response.success) {
       navigator.clipboard.writeText(response.data).then(() => {
-        showToast('Script JSON copied!');
+        showToast('Script loaded!');
+        notifyActiveTab({ type: 'SIMULATE_PASTE', text: response.data });
       }).catch(() => {
-        showToast('Clipboard copy failed');
+        notifyActiveTab({ type: 'SIMULATE_PASTE', text: response.data });
+        showToast('Script loaded!');
       });
     } else {
       showToast('Fetch failed');
