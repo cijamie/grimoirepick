@@ -29,6 +29,20 @@
       "author": "Viva La Sam",
       "scriptName": "Extension Cord",
       "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/extensioncord.json"
+    },
+    {
+      "id": "nogreaterjoy",
+      "name": "No Greater Joy",
+      "author": "Steven Medway",
+      "scriptName": "No Greater Joy",
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/nogreaterjoy.json"
+    },
+    {
+      "id": "trust",
+      "name": "Trust",
+      "author": "Milk",
+      "scriptName": "Trust",
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/trust.json"
     }
   ]
 }
