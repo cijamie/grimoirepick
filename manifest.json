@@ -5,8 +5,8 @@
       "name": "Zero Day",
       "author": "Jamie",
       "scriptName": "Operation: Zero Day by jme v1",
-      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/scripts/zeroday.json",
-      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/themes/zeroday.css"
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/zeroday.json",
+      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/zeroday.css"
     }
   ]
 }
