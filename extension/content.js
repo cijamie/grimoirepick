@@ -850,6 +850,12 @@
         </div>
       `;
 
+      // Diagnostic text after innerHTML is set
+      const debugDiv = document.createElement('div');
+      debugDiv.style.cssText = "color: #ff3333 !important; font-size: 0.6rem !important; margin-top: 5px !important; font-family: monospace !important; display: block !important;";
+      debugDiv.innerText = `DEBUG: ${theme.cssUrl ? 'hasCss' : 'noCss'} | buttons in DOM: ${card.querySelectorAll('button').length}`;
+      card.appendChild(debugDiv);
+
       // Event handlers for card buttons
       card.querySelector('[data-action="copy"]').addEventListener('click', () => {
         loadScriptJson(theme);

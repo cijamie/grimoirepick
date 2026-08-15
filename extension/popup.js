@@ -98,6 +98,12 @@ function renderThemes() {
         <button class="btn btn-secondary" data-action="copy" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #d4af37 !important; color: #d4af37 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load JSON</button>
       </div>
     `;
+
+    // Diagnostic text after innerHTML is set
+    const debugDiv = document.createElement('div');
+    debugDiv.style.cssText = "color: #ff3333 !important; font-size: 0.6rem !important; margin-top: 5px !important; font-family: monospace !important; display: block !important;";
+    debugDiv.innerText = `DEBUG: ${theme.cssUrl ? 'hasCss' : 'noCss'} | buttons in DOM: ${card.querySelectorAll('button').length}`;
+    card.appendChild(debugDiv);
     
     card.querySelector('[data-action="copy"]').addEventListener('click', () => {
       loadScriptJson(theme);
