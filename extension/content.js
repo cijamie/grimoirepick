@@ -403,15 +403,16 @@
         box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
         border-color: #00e5ff;
       }
-      .floating-btn svg {
-        width: 26px;
-        height: 26px;
-        fill: #d4af37;
-        transition: fill 0.3s, filter 0.3s;
+      .floating-btn img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.4));
       }
-      .floating-btn:hover svg {
-        fill: #00e5ff;
-        filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.5));
+      .floating-btn:hover img {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.6));
       }
 
       /* Side Drawer */
@@ -728,9 +729,7 @@
     floatBtn.className = 'floating-btn';
     floatBtn.title = 'BOTC Grimoire Pick';
     floatBtn.innerHTML = `
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2S4.5 8.5 4.5 13S8 21 12 21s7.5-3.5 7.5-8S12 2 12 2zm0 16c-2.8 0-5-2.2-5-5c0-1.8 1.2-3.8 2.6-5.1c.9-.8 1.9-1.4 2.4-1.8c.5.4 1.5 1 2.4 1.8c1.4 1.3 2.6 3.3 2.6 5.1c0 2.8-2.2 5-5 5z"/>
-      </svg>
+      <img src="${chrome.runtime.getURL('icon.png')}" alt="Logo" style="width: 28px; height: 28px; object-fit: contain; pointer-events: none;">
     `;
     shadow.appendChild(floatBtn);
 
