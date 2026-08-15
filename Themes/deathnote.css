@@ -105,7 +105,7 @@ aside.night-order .team.demon aside::after {
 aside.tab .container {
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), 
-    url("https://raw.githubusercontent.com/cijamie/BOTCShortFuse/main/DeathNote/deathnotebackground.png") !important;
+    url("https://github.com/cijamie/BOTCShortFuse/blob/main/DeathNote/deathnotebackground.png?raw=true") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: repeat-y !important;
@@ -115,10 +115,10 @@ aside.tab .container {
 }
 
 .token .ability,
-.token .ability::before {
+.token .ability:before {
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
-    url("https://raw.githubusercontent.com/cijamie/BOTCShortFuse/main/DeathNote/deathnotebackground.png") !important;
+    url("https://github.com/cijamie/BOTCShortFuse/blob/main/DeathNote/deathnotebackground.png?raw=true") !important;
   background-size: cover !important;
   color: #000 !important;
   border-color: #b30000 !important;
@@ -127,7 +127,7 @@ aside.tab .container {
 .container .messages {
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), 
-    url("https://raw.githubusercontent.com/cijamie/BOTCShortFuse/main/DeathNote/deathnotebackground.png") !important;
+    url("https://github.com/cijamie/BOTCShortFuse/blob/main/DeathNote/deathnotebackground.png?raw=true") !important;
   background-size: cover !important;
   color: #000 !important;
 }
@@ -215,7 +215,7 @@ aside.tab .container section *,
 
 #controls[data-v-8cf9c951]{text-align:right;z-index:75;place-content:center;align-items:center;gap:10px;min-height:45px;padding-right:45px;transition:opacity .25s;display:flex;position:absolute;top:3px;right:3px}
 #controls svg[data-v-8cf9c951]{filter:drop-shadow(0 0 4px #000)}
-#app.chroma-key #controls[data-v-8cf9c951]{filter:none}
+#app.chroma-key #controls svg[data-v-8cf9c951]{filter:none}
 #controls svg[data-v-8cf9c951]:not(.raise):hover path,#controls svg.primary[data-v-8cf9c951] path{fill:url(#primary-white)}
 #controls svg.secondary[data-v-8cf9c951] path{fill:url(#secondary-white)}
 #controls>.icon[data-v-8cf9c951]{cursor:pointer;z-index:5;white-space:nowrap;justify-content:center;align-items:center;gap:10px;line-height:1;display:flex}
