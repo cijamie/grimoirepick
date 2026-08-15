@@ -86,14 +86,3 @@ To expand the catalog with your own custom creations:
    *(Be sure to replace the GitHub repository URL with your own if you fork the project).*
 4. **Commit & Push**: Push your changes to your main branch. The registry is dynamically fetched, so your changes will load instantly!
 
----
-
-## Deploying as a GitHub Pages Website
-
-To deploy the catalog dashboard website:
-1. Go to your repository settings on GitHub.
-2. Select the **Pages** tab on the left sidebar.
-3. Under **Build and deployment**, set the source to **Deploy from a branch**.
-4. Choose the `main` branch and root `/` directory, then click **Save**.
-5. Once built, your catalog will be live at `https://<your-username>.github.io/<your-repo-name>/`.
-"# grimoirepick" 
