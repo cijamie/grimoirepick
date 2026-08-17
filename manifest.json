@@ -43,6 +43,13 @@
       "author": "Milk",
       "scriptName": "Trust",
       "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/trust.json"
+    },
+    {
+      "id": "dealwithit",
+      "name": "Deal With It",
+      "author": "Kyra",
+      "scriptName": "Deal With It",
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/dealwithit.json"
     }
   ]
 }
