@@ -1,0 +1,239 @@
+/* =========================================================
+   DEAL WITH IT - THEMED APPLICATION STYLES (DARK/FAUSTIAN)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --deal-gold: #d4af37;
+  --deal-gold-dim: rgba(212, 175, 55, 0.2);
+  --deal-bg-dark: #0a0a0f;
+  --deal-border: #d4af37;
+  --deal-text-bright: #ffffff;
+  --deal-text-dim: #cfd8dc;
+  --deal-text-muted: #90a4ae;
+  
+  /* Background Assets */
+  --deal-wall-bg: url("https://github.com/cijamie/CollatoralDamage/blob/main/faustian%20wallpaper.webp?raw=true");
+  --deal-paper-bg: url("https://github.com/cijamie/CollatoralDamage/blob/main/old%20paper.png?raw=true");
+}
+
+/* =========================================================
+   GLOBAL BASE & BACKGROUNDS
+   ========================================================= */
+
+html, body, #main, #app {
+  background-image: 
+    linear-gradient(rgba(10, 10, 15, 0.82), rgba(10, 10, 15, 0.82)), 
+    var(--deal-wall-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  color: var(--deal-text-bright) !important;
+  font-family: 'Share Tech Mono', monospace, sans-serif !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--deal-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--deal-gold);
+}
+
+/* =========================================================
+   CHARACTER SHEET & CONTAINER PAPERS (DARK OLD PAPER)
+   ========================================================= */
+
+aside.tab .container {
+  background-image: 
+    linear-gradient(rgba(20, 20, 25, 0.90), rgba(20, 20, 25, 0.90)), 
+    var(--deal-paper-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: repeat !important;
+  color: var(--deal-text-bright) !important;
+  padding: 8px 14px !important;
+  border: 2px solid var(--deal-border) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Tooltips / Token Ability Boxes */
+.token .ability,
+.token .ability:before {
+  background-image: 
+    linear-gradient(rgba(25, 25, 30, 0.92), rgba(25, 25, 30, 0.92)),
+    var(--deal-paper-bg) !important;
+  background-size: cover !important;
+  color: var(--deal-text-bright) !important;
+  border: 1.5px solid var(--deal-border) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Messages / Chat Log Container */
+.container .messages {
+  background-image: 
+    linear-gradient(rgba(20, 20, 25, 0.90), rgba(20, 20, 25, 0.90)), 
+    var(--deal-paper-bg) !important;
+  background-size: cover !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+  color: var(--deal-text-bright) !important;
+}
+
+/* Text boxes (Storyteller notes etc.) */
+#gather .textbox[data-v-3e006978],
+#vote .overlay[data-v-10079012] {
+  background-image: 
+    linear-gradient(rgba(20, 20, 25, 0.90), rgba(20, 20, 25, 0.90)), 
+    var(--deal-paper-bg) !important;
+  background-size: cover !important;
+  border: 2px solid var(--deal-border) !important;
+  color: var(--deal-text-bright) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Ensure light text inside old paper elements */
+aside.tab .container section *,
+.container .messages label,
+.container .messages .message,
+.container .messages label b,
+.token .ability *,
+#gather .textbox *,
+#vote .overlay * {
+  color: var(--deal-text-bright) !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+}
+
+/* Spacing and margins */
+aside.tab .team ul li,
+.team .role {
+  min-height: 28px !important;
+  padding: 2px 0 !important;
+  margin-bottom: 2px !important;
+  align-items: center !important;
+}
+
+aside.tab .team .name {
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: var(--deal-gold) !important;
+  width: 20% !important;
+  letter-spacing: 0.2px !important;
+  line-height: 1.15 !important;
+}
+
+aside.tab .team .ability {
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  color: var(--deal-text-dim) !important;
+  border-left-width: 2.5px !important;
+  padding-left: 8px !important;
+  width: 80% !important;
+}
+
+/* Category borders for sheet */
+aside.tab .team-townsfolk .ability { border-left-color: #00e5ff !important; }
+aside.tab .team-outsider .ability { border-left-color: #b388ff !important; }
+aside.tab .team-minion .ability { border-left-color: #ff3333 !important; }
+aside.tab .team-demon .ability { border-left-color: #ff1744 !important; }
+
+/* =========================================================
+   UI CONTROLS, MODALS & BUTTONS
+   ========================================================= */
+
+/* Modals */
+.modal {
+  background-image: 
+    linear-gradient(rgba(20, 20, 25, 0.94), rgba(20, 20, 25, 0.94)), 
+    var(--deal-paper-bg) !important;
+  background-size: cover !important;
+  border: 2px solid var(--deal-border) !important;
+  border-radius: 8px !important;
+  color: var(--deal-text-bright) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
+}
+
+.modal .header {
+  border-bottom: 2px solid var(--deal-border) !important;
+}
+
+.modal ul.tabs li {
+  border-top: 2px solid rgba(212, 175, 55, 0.2) !important;
+  border-right: 2px solid rgba(212, 175, 55, 0.2) !important;
+}
+.modal ul.tabs li:hover {
+  background: rgba(212, 175, 55, 0.1) !important;
+}
+.modal ul.tabs li.active {
+  background: rgba(212, 175, 55, 0.2) !important;
+  border-top-color: var(--deal-gold) !important;
+}
+
+/* Inputs */
+input {
+  background: rgba(10, 10, 15, 0.6) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  color: var(--deal-text-bright) !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+}
+input:focus {
+  border-color: var(--deal-gold) !important;
+  filter: drop-shadow(0 0 4px var(--deal-gold-dim)) !important;
+  outline: none !important;
+}
+
+/* Buttons */
+.button {
+  background: linear-gradient(rgba(212, 175, 55, 0.25), rgba(10, 10, 15, 0.9)) !important;
+  border: 1px solid var(--deal-border) !important;
+  color: var(--deal-text-bright) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+  transition: all 0.25s !important;
+}
+.button:hover {
+  background: var(--deal-gold) !important;
+  color: #07090e !important;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4) !important;
+}
+
+/* Nameplates and Labels */
+.nameplate[data-v-a97a535a] {
+  background: rgba(10, 10, 15, 0.85) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+  color: var(--deal-text-bright) !important;
+}
+
+.label[data-v-117ae6b4],
+.label[data-v-01149d2a] {
+  background: rgba(10, 10, 15, 0.8) !important;
+  border: 1.5px solid var(--deal-border) !important;
+  border-left: 0 !important;
+  color: var(--deal-text-dim) !important;
+}
+.label[data-v-117ae6b4]:hover,
+.label[data-v-01149d2a]:hover {
+  color: var(--deal-gold) !important;
+  background: rgba(20, 20, 25, 0.9) !important;
+}
+
+/* Tokens */
+.token[data-v-ae3a2122] {
+  border: 2px solid rgba(212, 175, 55, 0.4) !important;
+}
+.token.active[data-v-ae3a2122] {
+  border-color: var(--deal-gold) !important;
+}

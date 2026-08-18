@@ -56,6 +56,7 @@
       "author": "Kyra",
       "scriptName": "Deal With It",
       "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/dealwithit.json",
+      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/dealwithit.css",
       "description": "Deal with the chaos. Features the Faustican minion, forcing you to strike shady bargains or suffer poison under a vortox sky."
     }
   ]
