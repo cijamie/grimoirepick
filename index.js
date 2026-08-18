@@ -72,7 +72,7 @@ function renderThemes() {
       <div class="theme-author">Created by ${theme.author || 'Anonymous'}</div>
       <div class="theme-script"><strong>Target Script:</strong> ${theme.scriptName || 'No associated script'}</div>
       <div class="theme-script-desc">
-        Visual layout optimized for this custom edition. Loads auto-inject stylesheet and script JSON.
+        ${theme.description || 'Visual layout optimized for this custom edition. Loads auto-inject stylesheet and script JSON.'}
       </div>
       <div class="card-actions">
         ${theme.cssUrl

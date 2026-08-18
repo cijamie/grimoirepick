@@ -6,7 +6,8 @@
       "author": "cijamie",
       "scriptName": "Operation: Zero Day by jme v1",
       "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/zeroday.json",
-      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/zeroday.css"
+      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/zeroday.css",
+      "description": "Welcome to the matrix. A cyberpunk hacking-themed layout with terminal monospace fonts, digital grids, and glowing neon-green overlays."
     },
     {
       "id": "deathnote",
@@ -14,42 +15,48 @@
       "author": "Kyra",
       "scriptName": "Death Note v1.3",
       "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/deathnote.json",
-      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/deathnote.css"
+      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/deathnote.css",
+      "description": "Write their names in the notebook. A gothic, high-contrast black-and-crimson aesthetic complete with dark paper textures and blood-splattered menus."
     },
     {
       "id": "laissezunfaire",
       "name": "Laissez un Faire",
       "author": "Steven Medway",
       "scriptName": "Laissez un Faire",
-      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/laissezunfaire.json"
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/laissezunfaire.json",
+      "description": "A delicate balance of information and espionage. Features custom challenges with balloonists, goblins, and a lurking leviathan."
     },
     {
       "id": "extensioncord",
       "name": "Extension Cord",
       "author": "Viva La Sam",
       "scriptName": "Extension Cord",
-      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/extensioncord.json"
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/extensioncord.json",
+      "description": "Powering up the social deduction network. Navigate a web of investigators, mathematicians, and a hidden No Dashii."
     },
     {
       "id": "nogreaterjoy",
       "name": "No Greater Joy",
       "author": "Steven Medway",
       "scriptName": "No Greater Joy",
-      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/nogreaterjoy.json"
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/nogreaterjoy.json",
+      "description": "Classic social deduction with high stakes. Will you trust the Clockmaker's numbers, or fall victim to the Baron's tricks?"
     },
     {
       "id": "trust",
       "name": "Trust",
       "author": "Milk",
       "scriptName": "Trust",
-      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/trust.json"
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/trust.json",
+      "description": "A test of faith and betrayal. Watch your step around pixies, fortunetellers, and a vigormortis feeding on minions."
     },
     {
       "id": "dealwithit",
       "name": "Deal With It",
       "author": "Kyra",
       "scriptName": "Deal With It",
-      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/dealwithit.json"
+      "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/dealwithit.json",
+      "description": "Deal with the chaos. Features the Faustican minion, forcing you to strike shady bargains or suffer poison under a vortox sky."
     }
   ]
 }

@@ -100,6 +100,7 @@ function renderThemes() {
       </div>
       <div class="theme-author">By ${theme.author || 'Anonymous'}</div>
       <div class="theme-script" title="${theme.scriptName}">${theme.scriptName || 'No associated script'}</div>
+      ${theme.description ? `<div class="theme-desc" style="font-size: 0.7rem !important; color: #90a4ae !important; line-height: 1.35 !important; margin-bottom: 12px !important;">${theme.description}</div>` : ''}
       <div class="card-actions" style="display: flex !important; gap: 10px !important; margin-top: 12px !important; visibility: visible !important;">
         ${cssButtonHtml}
         <button class="btn btn-secondary" data-action="copy" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #d4af37 !important; color: #d4af37 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load JSON</button>
