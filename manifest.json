@@ -72,6 +72,13 @@
       "author": "cijamie",
       "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/glossy_white.css",
       "description": "A premium light glassmorphism layout featuring bright translucent cards, deep purple accents, and high-contrast text styling."
+    },
+    {
+      "id": "detective",
+      "name": "Detective Noir",
+      "author": "cijamie",
+      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/detective.css",
+      "description": "Retro detective case-file layout. Immerses you in sepia folder pages, typewriter keys, typewriter font, and scattered case reports."
     }
   ]
 }

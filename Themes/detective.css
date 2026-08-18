@@ -1,0 +1,225 @@
+/* =========================================================
+   DETECTIVE NOIR - VINTAGE CASE FILE & MAHOGANY DESK
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+:root {
+  --detective-primary: #1a1a1a;
+  --detective-border: #4a3e35;
+  --detective-paper-bg: url("https://github.com/cijamie/CollatoralDamage/blob/main/old%20paper.png?raw=true");
+  --detective-desk-bg: url("https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1920&q=80");
+  
+  --detective-ink: #111111;
+  --detective-ink-faded: #3a3a3a;
+  --detective-stamp: #8b0000; /* Dark red ink stamp */
+}
+
+/* =========================================================
+   GLOBAL BASE & BACKGROUNDS
+   ========================================================= */
+
+html, body, #main, #app {
+  background-image: 
+    linear-gradient(rgba(15, 10, 5, 0.4), rgba(15, 10, 5, 0.4)), 
+    var(--detective-desk-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  color: var(--detective-ink) !important;
+  font-family: 'Special Elite', 'Courier New', Courier, monospace !important;
+}
+
+/* Custom Scrollbars - Old metal style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #2b251f;
+}
+::-webkit-scrollbar-thumb {
+  background: #6e5e53;
+  border: 1px solid #4a3e35;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b7365;
+}
+
+/* =========================================================
+   CHARACTER SHEET & CONTAINER PAPERS (AGED MANILA FILE FOLDER)
+   ========================================================= */
+
+aside.tab .container {
+  background-image: 
+    linear-gradient(rgba(245, 238, 220, 0.94), rgba(245, 238, 220, 0.94)), 
+    var(--detective-paper-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: repeat !important;
+  color: var(--detective-ink) !important;
+  padding: 10px 18px !important;
+  border: 3px double var(--detective-border) !important;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6) !important;
+  transform: rotate(-0.5deg); /* Slight rotation to look scattered! */
+}
+
+/* Tooltips / Case notes ability boxes */
+.token .ability,
+.token .ability:before {
+  background-image: 
+    linear-gradient(rgba(247, 243, 232, 0.97), rgba(247, 243, 232, 0.97)),
+    var(--detective-paper-bg) !important;
+  background-size: cover !important;
+  color: var(--detective-ink) !important;
+  border: 2px solid var(--detective-border) !important;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4) !important;
+  font-family: 'Special Elite', monospace !important;
+  border-radius: 0 !important;
+}
+
+/* Chat Messages */
+.container .messages {
+  background-image: 
+    linear-gradient(rgba(250, 247, 240, 0.9), rgba(250, 247, 240, 0.9)), 
+    var(--detective-paper-bg) !important;
+  background-size: cover !important;
+  border-radius: 0 !important;
+  border: 1px dashed var(--detective-border) !important;
+  color: var(--detective-ink) !important;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05) !important;
+}
+
+/* Text boxes (Storyteller notes etc.) */
+#gather .textbox[data-v-3e006978],
+#vote .overlay[data-v-10079012] {
+  background-image: 
+    linear-gradient(rgba(245, 238, 220, 0.96), rgba(245, 238, 220, 0.96)), 
+    var(--detective-paper-bg) !important;
+  background-size: cover !important;
+  border: 4px double var(--detective-border) !important;
+  color: var(--detective-ink) !important;
+  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.6) !important;
+  transform: rotate(0.5deg);
+}
+
+/* Text elements inside old paper elements */
+aside.tab .container section *,
+.container .messages label,
+.container .messages .message,
+.container .messages label b,
+.token .ability *,
+#gather .textbox *,
+#vote .overlay * {
+  color: var(--detective-ink) !important;
+  text-shadow: none !important;
+}
+
+/* Role category lines in sheet (typewriter ink colors) */
+aside.tab .team .name {
+  font-weight: 800 !important;
+  color: var(--detective-ink) !important;
+  text-decoration: underline !important;
+}
+
+aside.tab .team .ability {
+  color: var(--detective-ink-faded) !important;
+  border-left: 2px solid var(--detective-border) !important;
+  padding-left: 10px !important;
+}
+
+/* Custom ink stamps for teams instead of color bars */
+aside.tab .team-townsfolk .ability { border-left-color: #2e5a44 !important; } /* Green ink stamp */
+aside.tab .team-outsider .ability { border-left-color: #3b3b6d !important; } /* Blue ink stamp */
+aside.tab .team-minion .ability { border-left-color: var(--detective-stamp) !important; } /* Red ink stamp */
+aside.tab .team-demon .ability { border-left-color: var(--detective-stamp) !important; border-left-width: 4px !important; }
+
+/* =========================================================
+   UI CONTROLS, MODALS & BUTTONS
+   ========================================================= */
+
+/* Modals - Classified Dossier style */
+.modal {
+  background-image: 
+    linear-gradient(rgba(240, 230, 210, 0.98), rgba(240, 230, 210, 0.98)), 
+    var(--detective-paper-bg) !important;
+  background-size: cover !important;
+  border: 4px solid var(--detective-border) !important;
+  border-radius: 0 !important;
+  color: var(--detective-ink) !important;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.7) !important;
+}
+
+.modal .header {
+  border-bottom: 2px solid var(--detective-border) !important;
+}
+
+.modal ul.tabs li {
+  border-top: 1px solid var(--detective-border) !important;
+  border-right: 1px solid var(--detective-border) !important;
+}
+.modal ul.tabs li:hover {
+  background: rgba(74, 62, 53, 0.1) !important;
+}
+.modal ul.tabs li.active {
+  background: rgba(245, 238, 220, 1) !important;
+  border-top-color: var(--detective-stamp) !important;
+  color: var(--detective-stamp) !important;
+}
+
+/* Inputs - Underlined typewriter blank */
+input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1.5px solid var(--detective-border) !important;
+  color: var(--detective-ink) !important;
+  border-radius: 0 !important;
+  font-family: 'Special Elite', monospace !important;
+}
+input:focus {
+  border-bottom-color: var(--detective-stamp) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Buttons - Typewriter Key Aesthetic */
+.button {
+  background: #eae6df !important;
+  border: 2px solid #4a3e35 !important;
+  color: #111 !important;
+  border-radius: 4px !important;
+  font-family: 'Special Elite', monospace !important;
+  box-shadow: 1px 3px 0px #32251a !important;
+  transition: all 0.1s ease !important;
+}
+.button:hover {
+  background: #dcd7ce !important;
+  box-shadow: 0px 1px 0px #32251a !important;
+  transform: translateY(2px) !important;
+}
+
+/* Labels and side indicators */
+.label[data-v-117ae6b4],
+.label[data-v-01149d2a] {
+  background: #f5eedc !important;
+  border: 2px solid var(--detective-border) !important;
+  border-left: 0 !important;
+  color: var(--detective-ink) !important;
+  font-family: 'Special Elite', monospace !important;
+}
+.label[data-v-117ae6b4]:hover,
+.label[data-v-01149d2a]:hover {
+  color: var(--detective-stamp) !important;
+  background: #ebdcb9 !important;
+}
+
+/* Tokens */
+.token[data-v-ae3a2122] {
+  border: 2px solid var(--detective-border) !important;
+}
+.token.active[data-v-ae3a2122] {
+  border-color: var(--detective-stamp) !important;
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.4) !important;
+}
