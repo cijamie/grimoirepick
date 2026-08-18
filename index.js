@@ -21,22 +21,50 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchRegistry() {
+  const localUrl = './manifest.json?t=' + Date.now();
+  const remoteUrl = 'https://raw.githubusercontent.com/cijamie/grimoirepick/main/manifest.json?t=' + Date.now();
+
   try {
-    const response = await fetch('./manifest.json?t=' + Date.now(), { cache: 'no-store' });
+    const response = await fetch(localUrl, { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     registry = await response.json();
-    
-    // Read active theme from localStorage (for display on website)
-    activeThemeId = localStorage.getItem('botc-hub-active-theme-id');
-    
-    renderThemes();
-  } catch (err) {
-    console.error('Failed to fetch manifest.json registry:', err);
-    const grid = document.getElementById('catalog-grid');
-    if (grid) {
-      grid.innerHTML = `<div class="loading-state" style="color: var(--color-danger);">Error loading registry database: ${err.message}</div>`;
+  } catch (localErr) {
+    console.warn('Failed to fetch local registry, trying remote GitHub fallback...', localErr);
+    try {
+      const response = await fetch(remoteUrl, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      registry = await response.json();
+    } catch (remoteErr) {
+      console.error('All registry fetch attempts failed:', remoteErr);
+      const grid = document.getElementById('catalog-grid');
+      if (grid) {
+        if (location.protocol === 'file:') {
+          grid.innerHTML = `
+            <div class="loading-state" style="color: var(--color-danger); text-align: center; max-width: 600px; margin: 25px auto; padding: 25px; background: rgba(255, 51, 51, 0.03); border: 1px solid rgba(255, 51, 51, 0.15); border-radius: 8px;">
+              <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">CORS Blocked: Failed to fetch manifest.json registry</p>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 12px;">
+                Modern browsers block local <code>fetch()</code> requests when HTML files are opened directly from the filesystem (using <code>file://</code>).
+              </p>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 8px;">
+                To run the catalog website locally, please start a local web server inside this folder:
+              </p>
+              <code style="display: block; background: rgba(7, 9, 14, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); padding: 10px; border-radius: 4px; font-family: monospace; font-size: 0.85rem; margin: 12px 0; color: #ff8888; text-align: center;">python -m http.server 8000</code>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+                Once started, view the page at: <a href="http://localhost:8000" target="_blank" style="color: var(--color-primary); font-weight: bold; text-decoration: underline;">http://localhost:8000</a>
+              </p>
+            </div>
+          `;
+        } else {
+          grid.innerHTML = `<div class="loading-state" style="color: var(--color-danger);">Error loading registry database: ${remoteErr.message}</div>`;
+        }
+      }
+      return;
     }
   }
+
+  // Read active theme from localStorage (for display on website)
+  activeThemeId = localStorage.getItem('botc-hub-active-theme-id');
+  renderThemes();
 }
 
 function renderThemes() {
