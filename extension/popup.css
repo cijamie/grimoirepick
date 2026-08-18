@@ -157,6 +157,38 @@ input:checked + .slider:before {
   gap: 12px;
 }
 
+.category-section {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  color: #d4af37;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding-bottom: 4px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-empty {
+  font-size: 0.7rem;
+  color: #90a4ae;
+  font-style: italic;
+  padding: 4px 0;
+}
+
+.category-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .theme-card {
   background: rgba(13, 18, 29, 0.55);
   border: 1px solid rgba(212, 175, 55, 0.15);

@@ -397,10 +397,34 @@ body {
 }
 
 /* Grid Layout for Grimoire Themes */
-.catalog-grid {
+.catalog-grid,
+.category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 25px;
+}
+
+.category-section {
+  margin-bottom: 45px;
+}
+
+.category-title {
+  font-family: var(--font-title);
+  font-size: 1.45rem;
+  color: var(--color-accent);
+  margin-bottom: 18px;
+  border-bottom: 1.5px solid rgba(212, 175, 55, 0.2);
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-empty {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  padding: 15px 0;
+  grid-column: 1 / -1;
 }
 
 /* Gothic styled spellbook theme cards */

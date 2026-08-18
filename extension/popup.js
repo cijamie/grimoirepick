@@ -78,54 +78,105 @@ function renderThemes() {
   }
   
   container.innerHTML = '';
-  
+
+  const fullySupported = [];
+  const justScripts = [];
+  const justCSS = [];
+
   filtered.forEach(theme => {
-    const isActive = theme.id === activeThemeId;
-    const card = document.createElement('div');
-    card.className = `theme-card ${isActive ? 'active' : ''}`;
-    
-    let cssButtonHtml = '';
-    if (theme.cssUrl) {
-      if (isActive) {
-        cssButtonHtml = `<button class="btn btn-reset" data-action="reset" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #ff3333 !important; color: #ff3333 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Reset</button>`;
-      } else {
-        cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable auto-detection to load manually"' : ''} style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #00e5ff !important; color: #00e5ff !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load CSS</button>`;
-      }
+    const hasScript = !!theme.scriptJsonUrl;
+    const hasCSS = !!theme.cssUrl;
+
+    if (hasScript && hasCSS) {
+      fullySupported.push(theme);
+    } else if (hasScript && !hasCSS) {
+      justScripts.push(theme);
+    } else if (!hasScript && hasCSS) {
+      justCSS.push(theme);
+    }
+  });
+
+  const categories = [
+    { title: 'Fully Supported Scripts', items: fullySupported },
+    { title: 'Just Scripts', items: justScripts },
+    { title: 'Just CSS', items: justCSS }
+  ];
+
+  categories.forEach(cat => {
+    if (query && cat.items.length === 0) {
+      return; // Hide empty sections when searching
     }
 
-    card.innerHTML = `
-      <div class="theme-name">
-        <span>${theme.name}</span>
-        ${isActive ? '<span class="badge">Active</span>' : ''}
-      </div>
-      <div class="theme-author">By ${theme.author || 'Anonymous'}</div>
-      <div class="theme-script" title="${theme.scriptName}">${theme.scriptName || 'No associated script'}</div>
-      ${theme.description ? `<div class="theme-desc" style="font-size: 0.7rem !important; color: #90a4ae !important; line-height: 1.35 !important; margin-bottom: 12px !important;">${theme.description}</div>` : ''}
-      <div class="card-actions" style="display: flex !important; gap: 10px !important; margin-top: 12px !important; visibility: visible !important;">
-        ${cssButtonHtml}
-        <button class="btn btn-secondary" data-action="copy" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #d4af37 !important; color: #d4af37 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load JSON</button>
-      </div>
-    `;
-    
-    card.querySelector('[data-action="copy"]').addEventListener('click', () => {
-      loadScriptJson(theme);
-    });
-    
-    const loadBtn = card.querySelector('[data-action="load"]');
-    if (loadBtn) {
-      loadBtn.addEventListener('click', () => {
-        loadTheme(theme);
+    const section = document.createElement('div');
+    section.className = 'category-section';
+
+    const titleEl = document.createElement('div');
+    titleEl.className = 'category-title';
+    titleEl.textContent = cat.title;
+    section.appendChild(titleEl);
+
+    const grid = document.createElement('div');
+    grid.className = 'category-grid';
+
+    if (cat.items.length === 0) {
+      grid.innerHTML = '<div class="category-empty">None registered yet.</div>';
+    } else {
+      cat.items.forEach(theme => {
+        const isActive = theme.id === activeThemeId;
+        const card = document.createElement('div');
+        card.className = `theme-card ${isActive ? 'active' : ''}`;
+        
+        let cssButtonHtml = '';
+        if (theme.cssUrl) {
+          if (isActive) {
+            cssButtonHtml = `<button class="btn btn-reset" data-action="reset" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #ff3333 !important; color: #ff3333 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Reset</button>`;
+          } else {
+            cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable auto-detection to load manually"' : ''} style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #00e5ff !important; color: #00e5ff !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load CSS</button>`;
+          }
+        }
+
+        card.innerHTML = `
+          <div class="theme-name">
+            <span>${theme.name}</span>
+            ${isActive ? '<span class="badge">Active</span>' : ''}
+          </div>
+          <div class="theme-author">By ${theme.author || 'Anonymous'}</div>
+          ${theme.scriptName ? `<div class="theme-script" title="${theme.scriptName}">${theme.scriptName}</div>` : ''}
+          ${theme.description ? `<div class="theme-desc" style="font-size: 0.7rem !important; color: #90a4ae !important; line-height: 1.35 !important; margin-bottom: 12px !important;">${theme.description}</div>` : ''}
+          <div class="card-actions" style="display: flex !important; gap: 10px !important; margin-top: 12px !important; visibility: visible !important;">
+            ${cssButtonHtml}
+            ${theme.scriptJsonUrl ? `<button class="btn btn-secondary" data-action="copy" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #d4af37 !important; color: #d4af37 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load JSON</button>` : ''}
+          </div>
+        `;
+        
+        // Bind actions
+        const copyBtn = card.querySelector('[data-action="copy"]');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', () => {
+            loadScriptJson(theme);
+          });
+        }
+        
+        const loadBtn = card.querySelector('[data-action="load"]');
+        if (loadBtn) {
+          loadBtn.addEventListener('click', () => {
+            loadTheme(theme);
+          });
+        }
+        
+        const resetBtn = card.querySelector('[data-action="reset"]');
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => {
+            resetTheme();
+          });
+        }
+        
+        grid.appendChild(card);
       });
     }
-    
-    const resetBtn = card.querySelector('[data-action="reset"]');
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        resetTheme();
-      });
-    }
-    
-    container.appendChild(card);
+
+    section.appendChild(grid);
+    container.appendChild(section);
   });
 }
 

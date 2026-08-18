@@ -59,53 +59,106 @@ function renderThemes() {
 
   container.innerHTML = '';
 
+  const fullySupported = [];
+  const justScripts = [];
+  const justCSS = [];
+
   filtered.forEach(theme => {
-    const isActive = theme.id === activeThemeId;
-    const card = document.createElement('div');
-    card.className = `theme-card ${isActive ? 'active' : ''}`;
+    const hasScript = !!theme.scriptJsonUrl;
+    const hasCSS = !!theme.cssUrl;
 
-    card.innerHTML = `
-      <div class="theme-title-row">
-        <h3 class="theme-name">${theme.name}</h3>
-        ${isActive ? '<span class="active-badge">Selected</span>' : ''}
-      </div>
-      <div class="theme-author">Created by ${theme.author || 'Anonymous'}</div>
-      <div class="theme-script"><strong>Target Script:</strong> ${theme.scriptName || 'No associated script'}</div>
-      <div class="theme-script-desc">
-        ${theme.description || 'Visual layout optimized for this custom edition. Loads auto-inject stylesheet and script JSON.'}
-      </div>
-      <div class="card-actions">
-        ${theme.cssUrl
-          ? (isActive
-            ? `<button class="web-btn web-btn-reset" data-action="reset">Reset CSS</button>`
-            : `<button class="web-btn web-btn-primary" data-action="load">Load CSS</button>`
-            )
-          : ''
+    if (hasScript && hasCSS) {
+      fullySupported.push(theme);
+    } else if (hasScript && !hasCSS) {
+      justScripts.push(theme);
+    } else if (!hasScript && hasCSS) {
+      justCSS.push(theme);
+    }
+  });
+
+  const categories = [
+    { title: 'Fully Supported Scripts', items: fullySupported },
+    { title: 'Just Scripts', items: justScripts },
+    { title: 'Just CSS', items: justCSS }
+  ];
+
+  categories.forEach(cat => {
+    if (query && cat.items.length === 0) {
+      return; // Hide empty sections when searching
+    }
+
+    const section = document.createElement('div');
+    section.className = 'category-section';
+
+    const titleEl = document.createElement('h2');
+    titleEl.className = 'category-title';
+    titleEl.textContent = cat.title;
+    section.appendChild(titleEl);
+
+    const grid = document.createElement('div');
+    grid.className = 'category-grid';
+
+    if (cat.items.length === 0) {
+      grid.innerHTML = `<div class="category-empty">No items registered in this category yet.</div>`;
+    } else {
+      cat.items.forEach(theme => {
+        const isActive = theme.id === activeThemeId;
+        const card = document.createElement('div');
+        card.className = `theme-card ${isActive ? 'active' : ''}`;
+
+        card.innerHTML = `
+          <div class="theme-title-row">
+            <h3 class="theme-name">${theme.name}</h3>
+            ${isActive ? '<span class="active-badge">Selected</span>' : ''}
+          </div>
+          <div class="theme-author">Created by ${theme.author || 'Anonymous'}</div>
+          ${theme.scriptName ? `<div class="theme-script"><strong>Target Script:</strong> ${theme.scriptName}</div>` : ''}
+          <div class="theme-script-desc">
+            ${theme.description || 'No description available.'}
+          </div>
+          <div class="card-actions">
+            ${theme.cssUrl
+              ? (isActive
+                ? `<button class="web-btn web-btn-reset" data-action="reset">Reset CSS</button>`
+                : `<button class="web-btn web-btn-primary" data-action="load">Load CSS</button>`
+                )
+              : ''
+            }
+            ${theme.scriptJsonUrl
+              ? `<button class="web-btn web-btn-secondary" data-action="copy">Load JSON</button>`
+              : ''
+            }
+          </div>
+        `;
+
+        // Bind actions
+        const copyBtn = card.querySelector('[data-action="copy"]');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', () => {
+            copyScriptJson(theme);
+          });
         }
-        <button class="web-btn web-btn-secondary" data-action="copy">Load JSON</button>
-      </div>
-    `;
 
-    // Bind actions
-    card.querySelector('[data-action="copy"]').addEventListener('click', () => {
-      copyScriptJson(theme);
-    });
+        const loadBtn = card.querySelector('[data-action="load"]');
+        if (loadBtn) {
+          loadBtn.addEventListener('click', () => {
+            loadTheme(theme);
+          });
+        }
 
-    const loadBtn = card.querySelector('[data-action="load"]');
-    if (loadBtn) {
-      loadBtn.addEventListener('click', () => {
-        loadTheme(theme);
+        const resetBtn = card.querySelector('[data-action="reset"]');
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => {
+            resetTheme();
+          });
+        }
+
+        grid.appendChild(card);
       });
     }
 
-    const resetBtn = card.querySelector('[data-action="reset"]');
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        resetTheme();
-      });
-    }
-
-    container.appendChild(card);
+    section.appendChild(grid);
+    container.appendChild(section);
   });
 }
 
