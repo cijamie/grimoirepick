@@ -131,7 +131,7 @@ function renderThemes() {
           if (isActive) {
             cssButtonHtml = `<button class="btn btn-reset" data-action="reset" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #ff3333 !important; color: #ff3333 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Reset</button>`;
           } else {
-            cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable auto-detection to load manually"' : ''} style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #00e5ff !important; color: #00e5ff !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load CSS</button>`;
+            cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${(autoDetectEnabled && theme.scriptJsonUrl) ? 'disabled title="Disable auto-detection to load manually"' : ''} style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #00e5ff !important; color: #00e5ff !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load CSS</button>`;
           }
         }
 
@@ -182,11 +182,24 @@ function renderThemes() {
 
 function loadTheme(theme) {
   activeThemeId = theme.id;
-  chrome.storage.local.set({ activeThemeId: theme.id }, () => {
-    notifyActiveTab({ type: 'LOAD_THEME', theme: theme });
-    renderThemes();
-    showToast(`Loaded theme "${theme.name}"`);
-  });
+  
+  if (!theme.scriptJsonUrl) {
+    autoDetectEnabled = false;
+    chrome.storage.local.set({ activeThemeId: theme.id, autoDetect: false }, () => {
+      const toggle = document.getElementById('auto-detect-toggle');
+      if (toggle) toggle.checked = false;
+      notifyActiveTab({ type: 'UPDATE_SETTINGS', autoDetect: false });
+      notifyActiveTab({ type: 'LOAD_THEME', theme: theme });
+      renderThemes();
+      showToast(`Loaded Just CSS theme "${theme.name}". Auto-detect disabled.`);
+    });
+  } else {
+    chrome.storage.local.set({ activeThemeId: theme.id }, () => {
+      notifyActiveTab({ type: 'LOAD_THEME', theme: theme });
+      renderThemes();
+      showToast(`Loaded theme "${theme.name}"`);
+    });
+  }
 }
 
 function resetTheme() {

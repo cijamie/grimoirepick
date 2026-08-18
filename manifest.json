@@ -58,6 +58,13 @@
       "scriptJsonUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Scripts/dealwithit.json",
       "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/dealwithit.css",
       "description": "Deal with the chaos. Features the Faustican minion, forcing you to strike shady bargains or suffer poison under a vortox sky."
+    },
+    {
+      "id": "glossy_dark",
+      "name": "Glossy Dark",
+      "author": "cijamie",
+      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/glossy_dark.css",
+      "description": "A premium dark glassmorphism layout featuring translucent glossy cards, neon-cyan highlights, and blurred backdrop reflections."
     }
   ]
 }

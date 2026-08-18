@@ -165,6 +165,15 @@
       return;
     }
 
+    // Auto-disable auto-detect if enabling a CSS-only theme
+    if (!theme.scriptJsonUrl) {
+      autoDetectEnabled = false;
+      saveSetting('autoDetect', false);
+      const toggleInput = shadowRootElement ? shadowRootElement.querySelector('#auto-detect-toggle') : null;
+      if (toggleInput) toggleInput.checked = false;
+      showToast('Just CSS theme loaded. Auto-detect disabled.');
+    }
+
     try {
       showToast(`Loading theme: ${theme.name}...`);
       const response = await sendMessageToBackground({ type: 'FETCH_TEXT', url: theme.cssUrl });
@@ -917,7 +926,7 @@
             if (isActive) {
               cssButtonHtml = `<button class="btn btn-reset" data-action="reset" style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #ff3333 !important; color: #ff3333 !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Reset</button>`;
             } else {
-              cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${autoDetectEnabled ? 'disabled title="Disable Auto-detect to load manually"' : ''} style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #00e5ff !important; color: #00e5ff !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load CSS</button>`;
+              cssButtonHtml = `<button class="btn btn-primary" data-action="load" ${(autoDetectEnabled && theme.scriptJsonUrl) ? 'disabled title="Disable Auto-detect to load manually"' : ''} style="display: inline-block !important; flex: 1 !important; padding: 6px 12px !important; border: 1px solid #00e5ff !important; color: #00e5ff !important; background: transparent !important; border-radius: 20px !important; font-family: 'Share Tech Mono', monospace !important; font-size: 0.7rem !important; cursor: pointer !important; text-transform: uppercase !important; text-align: center !important; font-weight: 600 !important; letter-spacing: 0.5px !important; height: auto !important; margin: 0 !important;">Load CSS</button>`;
             }
           }
 
