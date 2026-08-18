@@ -65,6 +65,13 @@
       "author": "cijamie",
       "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/glossy_dark.css",
       "description": "A premium dark glassmorphism layout featuring translucent glossy cards, neon-cyan highlights, and blurred backdrop reflections."
+    },
+    {
+      "id": "glossy_white",
+      "name": "Glossy White",
+      "author": "cijamie",
+      "cssUrl": "https://raw.githubusercontent.com/cijamie/grimoirepick/main/Themes/glossy_white.css",
+      "description": "A premium light glassmorphism layout featuring bright translucent cards, deep purple accents, and high-contrast text styling."
     }
   ]
 }

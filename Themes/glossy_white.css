@@ -1,18 +1,18 @@
 /* =========================================================
-   GLOSSY DARK - DYNAMIC SHADOWS & GLASSMORPHISM OVERLAY
+   GLOSSY WHITE - CLEAN LIGHT-THEME GLASSMORPHISM
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
 :root {
-  --gloss-primary: #00e5ff;
-  --gloss-primary-glow: rgba(0, 229, 255, 0.35);
-  --gloss-bg: #030406;
-  --gloss-border: rgba(255, 255, 255, 0.1);
-  --gloss-card-bg: rgba(6, 8, 12, 0.88);
-  --gloss-reflect: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 50%, rgba(0, 0, 0, 0.3) 100%);
-  --gloss-text: #ffffff;
-  --gloss-text-muted: #b0bec5;
+  --gloss-primary: #792fcb;
+  --gloss-primary-glow: rgba(121, 47, 203, 0.2);
+  --gloss-bg: #f4f6f9;
+  --gloss-border: rgba(255, 255, 255, 0.45);
+  --gloss-card-bg: rgba(255, 255, 255, 0.68);
+  --gloss-reflect: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0.05) 100%);
+  --gloss-text: #0f172a;
+  --gloss-text-muted: #475569;
 }
 
 /* =========================================================
@@ -21,7 +21,7 @@
 
 html, body, #main, #app {
   background: 
-    radial-gradient(circle at 50% 35%, #182030 0%, #07090e 75%) !important;
+    radial-gradient(circle at 50% 35%, #ffffff 0%, #e2e8f0 80%) !important;
   color: var(--gloss-text) !important;
   font-family: 'Montserrat', sans-serif !important;
   -webkit-font-smoothing: antialiased !important;
@@ -36,7 +36,7 @@ html, body, #main, #app {
   background: var(--gloss-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   border: 1px solid var(--gloss-border);
   border-radius: 4px;
 }
@@ -57,26 +57,26 @@ aside.tab .container {
   border: 1px solid var(--gloss-border) !important;
   border-radius: 12px !important;
   color: var(--gloss-text) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
   padding: 10px 16px !important;
 }
 
 /* Tooltips & Token Info */
 .token .ability,
 .token .ability:before {
-  background-color: rgba(15, 18, 25, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.88) !important;
   background-image: var(--gloss-reflect) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border: 1px solid var(--gloss-border) !important;
   border-radius: 8px !important;
   color: var(--gloss-text) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12) !important;
 }
 
 /* Chat Messages */
 .container .messages {
-  background-color: rgba(7, 9, 14, 0.45) !important;
+  background-color: rgba(255, 255, 255, 0.45) !important;
   backdrop-filter: blur(8px) !important;
   border: 1px solid var(--gloss-border) !important;
   border-radius: 6px !important;
@@ -92,10 +92,10 @@ aside.tab .container {
   border: 1px solid var(--gloss-border) !important;
   border-radius: 12px !important;
   color: var(--gloss-text) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08) !important;
 }
 
-/* Ensure text rendering remains clear and bright */
+/* Ensure text color inside elements is high contrast dark slate */
 aside.tab .container section *,
 .container .messages label,
 .container .messages .message,
@@ -103,27 +103,27 @@ aside.tab .container section *,
 .token .ability *,
 #gather .textbox *,
 #vote .overlay * {
-  color: #ffffff !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important;
+  color: var(--gloss-text) !important;
+  text-shadow: none !important;
 }
 
 /* Sheet roles */
 aside.tab .team .name {
   font-weight: 700 !important;
   color: var(--gloss-primary) !important;
-  text-shadow: 0 0 6px var(--gloss-primary-glow) !important;
+  text-shadow: 0 0 4px var(--gloss-primary-glow) !important;
 }
 
 aside.tab .team .ability {
-  color: #cfd8dc !important;
+  color: var(--gloss-text-muted) !important;
   border-left-width: 3px !important;
 }
 
 /* Team line colors */
-aside.tab .team-townsfolk .ability { border-left-color: #00e5ff !important; }
-aside.tab .team-outsider .ability { border-left-color: #b388ff !important; }
-aside.tab .team-minion .ability { border-left-color: #ff3333 !important; }
-aside.tab .team-demon .ability { border-left-color: #ff1744 !important; }
+aside.tab .team-townsfolk .ability { border-left-color: #0d9488 !important; }
+aside.tab .team-outsider .ability { border-left-color: #7c3aed !important; }
+aside.tab .team-minion .ability { border-left-color: #ea580c !important; }
+aside.tab .team-demon .ability { border-left-color: #dc2626 !important; }
 
 /* =========================================================
    UI CONTROLS & INTERFACES
@@ -131,34 +131,38 @@ aside.tab .team-demon .ability { border-left-color: #ff1744 !important; }
 
 /* Modals */
 .modal {
-  background-color: rgba(10, 12, 16, 0.88) !important;
+  background-color: rgba(255, 255, 255, 0.94) !important;
   background-image: var(--gloss-reflect) !important;
   backdrop-filter: blur(20px) !important;
   border: 1px solid var(--gloss-border) !important;
   border-radius: 12px !important;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.6) !important;
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.15) !important;
+  color: var(--gloss-text) !important;
 }
 
 .modal .header {
-  border-bottom: 1px solid var(--gloss-border) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
 }
 
 .modal ul.tabs li {
-  border-top: 1px solid var(--gloss-border) !important;
-  border-right: 1px solid var(--gloss-border) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.06) !important;
+  color: var(--gloss-text-muted) !important;
 }
 .modal ul.tabs li:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(0, 0, 0, 0.02) !important;
+  color: var(--gloss-text) !important;
 }
 .modal ul.tabs li.active {
-  background: rgba(0, 229, 255, 0.12) !important;
+  background: rgba(121, 47, 203, 0.08) !important;
   border-top-color: var(--gloss-primary) !important;
+  color: var(--gloss-primary) !important;
 }
 
 /* Inputs */
 input {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid var(--gloss-border) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
   color: var(--gloss-text) !important;
   border-radius: 6px !important;
   backdrop-filter: blur(4px) !important;
@@ -171,16 +175,16 @@ input:focus {
 
 /* Glossy buttons */
 .button {
-  background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.02)) !important;
-  border: 1px solid var(--gloss-border) !important;
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.3)) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
   color: var(--gloss-text) !important;
   border-radius: 24px !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.8) !important;
   transition: all 0.2s ease-in-out !important;
 }
 .button:hover {
   background: var(--gloss-primary) !important;
-  color: #07090e !important;
+  color: #ffffff !important;
   border-color: var(--gloss-primary) !important;
   box-shadow: 0 0 15px var(--gloss-primary-glow) !important;
 }
@@ -188,23 +192,23 @@ input:focus {
 /* Labels and side indicators */
 .label[data-v-117ae6b4],
 .label[data-v-01149d2a] {
-  background: rgba(13, 18, 29, 0.75) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
   backdrop-filter: blur(8px) !important;
   border: 1px solid var(--gloss-border) !important;
   border-left: 0 !important;
-  color: var(--gloss-text-dim) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+  color: var(--gloss-text-muted) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
 }
 .label[data-v-117ae6b4]:hover,
 .label[data-v-01149d2a]:hover {
   color: var(--gloss-primary) !important;
-  background: rgba(13, 18, 29, 0.9) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
 }
 
 /* Tokens styling */
 .token[data-v-ae3a2122] {
-  border: 1px solid rgba(255,255,255,0.2) !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06) !important;
 }
 .token.active[data-v-ae3a2122] {
   border-color: var(--gloss-primary) !important;
